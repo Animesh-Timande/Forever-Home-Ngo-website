@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | Forever Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+ <link rel="icon" href="Photo/logo.png">
+
+</head>
+<body>
+
+ <!-- navbar -->
+<nav class="navbarDec">
+    <div class="logo">
+        <img src="Photo/logo.png" alt="Forever Home Logo">
+        <span>Forever Home</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="adopt.html">Adopt</a>
+        <a href="support.html">Support</a>
+        <a href="story.html">Stories</a>
+        <a href="contact.html">Contact</a>
+        <a href="#" class="donate-btn">Donate</a>
+    </div>
+</nav>
+<section class="hero">
+
+<div class="hero-content">
+<h1>Be The Light In Their Darkness 🐾</h1>
+<p>Your kindness today becomes their survival tomorrow.</p>
+</div>
+</section>
+
+<section class="counter-section">
+<p>Total Donations Raised</p>
+<div class="counter" id="donationCounter">₹3050</div>
+
+<div class="progress-container">
+<div class="progress" id="progressBar"></div>
+</div>
+<p>Goal: ₹50,000</p>
+</section>
+
+<div class="glass-card">
+<h2>Choose Your Contribution 💛</h2>
+
+<div class="amount-buttons">
+<button onclick="selectAmount(100)">₹100</button>
+<button onclick="selectAmount(500)">₹500</button>
+<button onclick="selectAmount(1000)">₹1000</button>
+</div>
+
+<div class="custom-amount">
+<input type="number" id="customAmount" placeholder="Enter Custom Amount">
+</div>
+
+<button class="donate-btn" onclick="openModal()">Donate Now</button>
+
+<p style="margin-top:20px;"><strong>UPI ID:</strong> <span id="upiId">petshelterngo@postbank</span></p>
+<button class="close-btn" onclick="copyUPI()">Copy UPI ID</button>
+
+</div>
+
+<section class="impact">
+<h2>Your Impact 🏆</h2>
+<div class="impact-box">₹100 feeds 3 street dogs 🐶</div>
+<div class="impact-box">₹500 gives medical treatment 🏥</div>
+<div class="impact-box">₹1000 supports emergency rescue 🚑</div>
+</section>
+
+<div class="modal" id="qrModal">
+<div class="modal-box">
+<h3>Scan & Save A Life 🐾</h3>
+<img src="Photo/qr.jpeg">
+<button class="close-btn" onclick="completeDonation()">I Have Donated</button>
+</div>
+</div>
+
+<div class="thank-you" id="thankYou">
+❤️ Thank You For Saving A Life ❤️
+<p style="font-size:18px;margin-top:10px;">Your kindness matters.</p>
+</div>
+
+<audio id="donationSound" src="donation.mp3"></audio>
+
+
+<script src="app2.js"></script>
+
+</body>
+</html>

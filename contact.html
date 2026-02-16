@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact</title>
+       <link rel="icon" href="Photo/logo.png">
+   <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+    <!-- navbar -->
+<nav class="navbarDec">
+    <div class="logo">
+        <img src="Photo/logo.png" alt="Forever Home Logo">
+        <span>Forever Home</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="adopt.html">Adopt</a>
+        <a href="support.html">Support</a>
+        <a href="story.html">Stories</a>
+        <a href="#">Contact</a>
+        <a href="donat.html" class="donate-btn">Donate</a>
+    </div>
+</nav>
+    
+<!-- HERO SECTION -->
+<section class="contact-hero text-center text-white">
+    <div class="container">
+        <h1>Get In Touch & Be Their Hope 🐾</h1>
+        <p>Your message could change a life. Whether you want to adopt, volunteer, or donate — we’re here.</p>
+    </div>
+</section>
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-card shadow-lg">
+
+            <form>
+
+                <!-- Full Name -->
+                <div class="mb-4">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email & Phone -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+                </div>
+
+                <!-- Reason -->
+                <div class="mb-4">
+                    <label class="form-label">Reason for Contact</label>
+                    <select class="form-select" required>
+                        <option selected disabled>Select reason</option>
+                        <option>Adoption Inquiry</option>
+                        <option>Donation Support</option>
+                        <option>Volunteer</option>
+                        <option>Rescue Help</option>
+                        <option>General Question</option>
+                    </select>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-4">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+                </div>
+
+                <!-- Submit -->
+                <div class="text-center">
+                    <button type="submit" class="btn donate-btn">Send Message ❤️</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer text-center text-white">
+    <div class="container">
+        <h3>Be the Reason a Tail Wags Today 🐶🐱</h3>
+        <p>Even a small donation can bring food, care, and love to a homeless pet.</p>
+        <a href="donat.html" class="btn footer-donate">Donate Now</a>
+        <hr class="bg-light">
+        <p>© 2026 Forever Home Pet Shelter | Giving Every Paw a Second Chance ❤️</p>
+    </div>
+</footer>
+    
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const supabaseUrl = "https://mecetdwgvglqrppcxwbm.supabase.co";
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lY2V0ZHdndmdscXJwcGN4d2JtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyMjY0NjcsImV4cCI6MjA4NjgwMjQ2N30.Sj_QrkxMrHtm2TC-PdjONR5GLaT0dcdHOQHSoYKf09Y";
+
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    const form = document.querySelector(".contact-card form");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const fullName = form.querySelector("input[type='text']").value.trim();
+        const email = form.querySelector("input[type='email']").value.trim();
+        const phone = form.querySelector("input[type='tel']").value.trim();
+        const reason = form.querySelector("select").value;
+        const message = form.querySelector("textarea").value.trim();
+
+        if (!reason || reason === "Select reason") {
+            alert("Please select a reason");
+            return;
+        }
+
+        const { data, error } = await supabase
+            .from("contact_messages")
+            .insert([
+                {
+                    full_name: fullName,
+                    email: email,
+                    phone: phone,
+                    reason: reason,
+                    message: message
+                }
+            ]);
+
+        if (error) {
+            console.error("Insert Error:", error);
+            alert("❌ Error saving data. Check console.");
+        } else {
+            alert("✅ Message saved successfully!");
+            form.reset();
+        }
+    });
+
+});
+</script>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
