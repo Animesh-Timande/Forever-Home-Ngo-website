@@ -1,3 +1,11 @@
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
 const modal = document.getElementById("donationModal");
 const openBtns = [
     document.getElementById("donateBtn"),
@@ -21,4 +29,5 @@ window.addEventListener("click", (e) => {
         modal.classList.remove("active");
     }
 });
+
 
