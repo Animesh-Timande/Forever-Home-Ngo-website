@@ -1,6 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const supabaseUrl = "https://mecetdwgvglqrppcxwbm.supabase.co";
@@ -8,41 +5,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-    const form = document.querySelector(".contact-card form");
+    const form = document.getElementById("contactForm");
+    const statusText = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
 
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        const fullName = form.querySelector("input[type='text']").value.trim();
-        const email = form.querySelector("input[type='email']").value.trim();
-        const phone = form.querySelector("input[type='tel']").value.trim();
-        const reason = form.querySelector("select").value;
-        const message = form.querySelector("textarea").value.trim();
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+        statusText.innerText = "";
 
-        if (!reason || reason === "Select reason") {
-            alert("Please select a reason");
-            return;
-        }
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const reason = document.getElementById("reason").value;
+        const message = document.getElementById("message").value.trim();
 
-        const { data, error } = await supabase
-            .from("contact_messages")
-            .insert([
-                {
-                    full_name: fullName,
-                    email: email,
-                    phone: phone,
-                    reason: reason,
-                    message: message
-                }
-            ]);
+        try {
+            const { error } = await supabase
+                .from("contact_messages")
+                .insert([
+                    {
+                        full_name: fullName,
+                        email: email,
+                        phone: phone,
+                        reason: reason,
+                        message: message
+                    }
+                ]);
 
-        if (error) {
-            console.error("Insert Error:", error);
-            alert("❌ Error saving data. Check console.");
-        } else {
-            alert("✅ Message saved successfully!");
+            if (error) throw error;
+
+            statusText.innerHTML = "✅ Message sent successfully!";
+            statusText.style.color = "green";
             form.reset();
+
+        } catch (error) {
+            console.error("Insert Error:", error);
+            statusText.innerHTML = "❌ " + error.message;
+            statusText.style.color = "red";
         }
+
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Send Message ❤️";
     });
 
 });
