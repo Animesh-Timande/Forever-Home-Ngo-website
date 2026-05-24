@@ -1,98 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donate | Forever Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
- <link rel="icon" href="Photo/logo.png">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <!-- navbar -->
-<nav class="navbar">
-    <div class="logo">
-        <img src="Photo/logo.png">
-        <span>Forever Home</span>
-    </div>
+<!-- ════════ THANK YOU OVERLAY ════════ -->
+<div class="thank-overlay" id="thankYou">
+  <div class="thank-circle">❤️</div>
+  <h2>Thank You for <em>Saving a Life!</em></h2>
+  <p>Your kindness means everything. Because of you, an animal gets food, medicine, shelter — and a chance to feel loved again.</p>
+  <button class="thank-close" onclick="document.getElementById('thankYou').classList.remove('active')">Close ✕</button>
+</div>
 
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+<!-- ════════ QR MODAL ════════ -->
+<div class="d-modal" id="qrModal">
+  <div class="d-modal-box">
+    <button class="modal-close" onclick="document.getElementById('qrModal').classList.remove('active')">✕</button>
+    <h3>Scan &amp; Save a Life 🐾</h3>
+    <p class="qr-sub">Use any UPI app to scan the QR code below</p>
+    <img src="Photo/qr.png" alt="QR Code" onerror="this.style.display='none'">
+    <div class="qr-upi">UPI ID: <strong id="upiDisplay">foreverhomengo@postbank</strong></div>
+    <button class="d-confirm-btn" onclick="completeDonation()">✅ I Have Donated</button>
+  </div>
+</div>
 
-    <div class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="adopt.html">Adopt</a>
-        <a href="support.html">Support</a>
-        <a href="story.html">Stories</a>
-        <a href="contact.html">Contact</a>
-        <a href="#" class="btn-nav">Donate</a>
-    </div>
+<!-- ════════ NAVBAR ════════ -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn-nav active">Donate</a>
+  </div>
 </nav>
+
+<!-- ════════ HERO ════════ -->
 <section class="hero">
-
-<div class="hero-content">
-<h1>Be The Light In Their Darkness 🐾</h1>
-<p>Your kindness today becomes their survival tomorrow.</p>
-</div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">❤️ &nbsp; Be Their Miracle</div>
+    <h1>Be the <em>Light</em><br>in Their Darkness</h1>
+    <p class="lead">Your kindness today becomes their survival tomorrow. One small act of generosity can rewrite an entire life.</p>
+    <p class="hero-sub">"They don't ask for much — just someone who cares enough to try."</p>
+    <div class="hero-impact">
+      <div class="hi-item"><span class="hii">🍖</span><p>₹100 feeds <strong>3 street dogs</strong></p></div>
+      <div class="hi-item"><span class="hii">🏥</span><p>₹500 gives <strong>medical treatment</strong></p></div>
+      <div class="hi-item"><span class="hii">🚑</span><p>₹1000 funds <strong>emergency rescue</strong></p></div>
+      <div class="hi-item"><span class="hii">🏠</span><p>₹5000 covers <strong>a month's shelter</strong></p></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Give</span><div class="scroll-line"></div></div>
 </section>
 
-<section class="counter-section">
-<p>Total Donations Raised</p>
-<div class="counter" id="donationCounter">₹3050</div>
-
-<div class="progress-container">
-<div class="progress" id="progressBar"></div>
-</div>
-<p>Goal: ₹50,000</p>
+<!-- ════════ COUNTER SECTION ════════ -->
+<section class="counter-sec">
+  <p class="counter-label">Total Donations Raised</p>
+  <div class="donation-counter" id="donationCounter">₹3,050</div>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <p class="goal-label">Goal: ₹50,000</p>
+  <div class="goal-pct" id="goalPct">6% funded</div>
 </section>
 
-<div class="glass-card">
-<h2>Choose Your Contribution 💛</h2>
+<!-- ════════ DONATE CARD ════════ -->
+<div class="donate-card-wrap">
+  <div class="donate-card rev-s">
+    <h2>Choose Your <em>Contribution</em> 💛</h2>
+    <p class="dc-sub">Every rupee you give directly saves a life. No amount is too small.</p>
 
-<div class="amount-buttons">
-<button onclick="selectAmount(100)">₹100</button>
-<button onclick="selectAmount(500)">₹500</button>
-<button onclick="selectAmount(1000)">₹1000</button>
+    <div class="amount-btns">
+      <button class="amount-btn" onclick="selectAmount(100,this)">₹100</button>
+      <button class="amount-btn" onclick="selectAmount(500,this)">₹500</button>
+      <button class="amount-btn" onclick="selectAmount(1000,this)">₹1,000</button>
+      <button class="amount-btn" onclick="selectAmount(5000,this)">₹5,000</button>
+    </div>
+
+    <div class="custom-row">
+      <input type="number" class="custom-inp" id="customAmount" placeholder="Or enter custom amount (₹)">
+    </div>
+
+    <button class="donate-now-btn" onclick="openModal()">Donate Now 🐾</button>
+
+    <div class="upi-row">
+      <p class="upi-label">Or pay directly via UPI</p>
+      <div class="upi-id">
+        <span>📱</span>
+        <span id="upiId">foreverhomengo@postbank</span>
+      </div><br>
+      <button class="copy-btn" onclick="copyUPI()">📋 Copy UPI ID</button>
+    </div>
+  </div>
 </div>
 
-<div class="custom-amount">
-<input type="number" id="customAmount" placeholder="Enter Custom Amount">
-</div>
-
-<button class="donate-btn" onclick="openModal()">Donate Now</button>
-
-<p style="margin-top:20px;"><strong>UPI ID:</strong> <span id="upiId">petshelterngo@postbank</span></p>
-<button class="close-btn" onclick="copyUPI()">Copy UPI ID</button>
-
-</div>
-
-<section class="impact">
-<h2>Your Impact 🏆</h2>
-<div class="impact-box">₹100 feeds 3 street dogs 🐶</div>
-<div class="impact-box">₹500 gives medical treatment 🏥</div>
-<div class="impact-box">₹1000 supports emergency rescue 🚑</div>
+<!-- ════════ IMPACT SECTION ════════ -->
+<section class="impact-sec">
+  <h2 class="rev">Your <em>Impact</em> 🏆</h2>
+  <p class="is-sub rev">See exactly where every single rupee of your donation goes.</p>
+  <div class="impact-grid">
+    <div class="impact-box rev">
+      <span class="ib-icon">🍖</span>
+      <h4>₹100</h4>
+      <p>Feeds 3 hungry street dogs for an entire day</p>
+    </div>
+    <div class="impact-box rev">
+      <span class="ib-icon">💉</span>
+      <h4>₹300</h4>
+      <p>Covers vaccinations to protect from deadly diseases</p>
+    </div>
+    <div class="impact-box rev">
+      <span class="ib-icon">🏥</span>
+      <h4>₹500</h4>
+      <p>Provides full medical treatment for a sick animal</p>
+    </div>
+    <div class="impact-box rev">
+      <span class="ib-icon">🚑</span>
+      <h4>₹1,000</h4>
+      <p>Supports one complete emergency rescue operation</p>
+    </div>
+    <div class="impact-box rev">
+      <span class="ib-icon">🏠</span>
+      <h4>₹5,000</h4>
+      <p>Funds a full month of shelter, food &amp; love</p>
+    </div>
+    <div class="impact-box rev">
+      <span class="ib-icon">🐶</span>
+      <h4>₹10,000</h4>
+      <p>Sponsors complete care for one animal for 3 months</p>
+    </div>
+  </div>
 </section>
 
-<div class="modal" id="qrModal">
-<div class="modal-box">
-<h3>Scan & Save A Life 🐾</h3>
-<img src="Photo/qr.jpeg">
-<button class="close-btn" onclick="completeDonation()">I Have Donated</button>
-</div>
-</div>
+<!-- ════════ EMOTIONAL STORY BAND ════════ -->
+<section class="story-band">
+  <span class="story-paws">🐾</span>
+  <p class="quote rev">"Bruno was found bleeding on the road, too weak to move. We rushed him to safety. After two months of medicine, love, and warmth — he took his first full run. That run was paid for by someone just like you."</p>
+  <cite>— Forever Home Rescue Team</cite>
+</section>
 
-<div class="thank-you" id="thankYou">
-❤️ Thank You For Saving A Life ❤️
-<p style="font-size:18px;margin-top:10px;">Your kindness matters.</p>
-</div>
+<!-- ════════ FOOTER ════════ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="adopt.html" class="btn-solid">Adopt a Pet 🐶</a>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a><a href="#">Donate</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Get Involved</h4>
+      <a href="support.html">Support Us</a><a href="story.html">Rescue Stories</a>
+      <a href="contact.html">Volunteer</a><a href="contact.html">Foster a Pet</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
+</footer>
 
 <audio id="donationSound" src="donation.mp3"></audio>
 
+<script>
+  /* ── Navbar ── */
+  const toggle=document.getElementById('menu-toggle'),navLinks=document.getElementById('nav-links'),navbar=document.getElementById('navbar');
+  toggle.addEventListener('click',()=>{
+    navLinks.classList.toggle('active');
+    const spans=toggle.querySelectorAll('span'),open=navLinks.classList.contains('active');
+    spans[0].style.transform=open?'rotate(45deg) translate(5px,5px)':'';
+    spans[1].style.opacity=open?'0':'';
+    spans[2].style.transform=open?'rotate(-45deg) translate(5px,-5px)':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }));
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>50));
 
-<script src="app2.js"></script>
-<script src="app.js"></script>
+  /* ── Scroll Reveal ── */
+  const allR=document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-s');
+  const ro=new IntersectionObserver((e)=>{
+    e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('v'),i*90);ro.unobserve(en.target);}});
+  },{threshold:0.1});
+  allR.forEach(el=>ro.observe(el));
 
+  /* ── Floating Particles ── */
+  const emojis=['❤️','🐾','🐶','🐱','💛','✨'];
+  for(let i=0;i<16;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    p.style.left=Math.random()*100+'%';
+    p.style.bottom='-30px';
+    p.style.fontSize=(10+Math.random()*10)+'px';
+    p.style.animationDuration=(6+Math.random()*8)+'s';
+    p.style.animationDelay=(Math.random()*10)+'s';
+    document.body.appendChild(p);
+  }
+
+  /* ── Donation State ── */
+  let selectedAmount=0;
+  let totalDonation=3050;
+  const goal=50000;
+
+  function updateProgress(){
+    const pct=Math.min((totalDonation/goal)*100,100);
+    setTimeout(()=>{ document.getElementById('progressBar').style.width=pct+'%'; },300);
+    document.getElementById('donationCounter').textContent='₹'+totalDonation.toLocaleString('en-IN');
+    document.getElementById('goalPct').textContent=Math.round(pct)+'% funded';
+  }
+  updateProgress();
+
+  /* ── Counter animation on load ── */
+  function animateCounter(el,start,end,duration){
+    let startTime=null;
+    function step(ts){
+      if(!startTime)startTime=ts;
+      const prog=Math.min((ts-startTime)/duration,1);
+      const val=Math.floor(prog*(end-start)+start);
+      el.textContent='₹'+val.toLocaleString('en-IN');
+      if(prog<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const counterEl=document.getElementById('donationCounter');
+  const cObs=new IntersectionObserver(([e])=>{
+    if(e.isIntersecting){animateCounter(counterEl,0,totalDonation,1800);cObs.disconnect();}
+  },{threshold:.3});
+  cObs.observe(counterEl);
+
+  /* ── Amount Selection ── */
+  function selectAmount(amount,btn){
+    selectedAmount=amount;
+    document.querySelectorAll('.amount-btn').forEach(b=>b.classList.remove('active'));
+    if(btn)btn.classList.add('active');
+    document.getElementById('customAmount').value='';
+  }
+
+  /* ── Open Modal ── */
+  function openModal(){
+    const custom=document.getElementById('customAmount').value;
+    if(custom&&parseInt(custom)>0){
+      selectedAmount=parseInt(custom);
+      document.querySelectorAll('.amount-btn').forEach(b=>b.classList.remove('active'));
+    }
+    if(selectedAmount<=0){
+      alert('💛 Please select or enter a donation amount first!');
+      return;
+    }
+    document.getElementById('qrModal').classList.add('active');
+  }
+
+  /* ── Complete Donation ── */
+  function completeDonation(){
+    document.getElementById('qrModal').classList.remove('active');
+    if(selectedAmount>0){
+      totalDonation+=selectedAmount;
+      updateProgress();
+      const counterEl=document.getElementById('donationCounter');
+      counterEl.classList.add('bump');
+      setTimeout(()=>counterEl.classList.remove('bump'),400);
+      const sound=document.getElementById('donationSound');
+      if(sound)sound.play().catch(()=>{});
+    }
+    const ty=document.getElementById('thankYou');
+    ty.classList.add('active');
+    setTimeout(()=>ty.classList.remove('active'),5000);
+    selectedAmount=0;
+    document.querySelectorAll('.amount-btn').forEach(b=>b.classList.remove('active'));
+  }
+
+  /* ── Copy UPI ── */
+  function copyUPI(){
+    const upi=document.getElementById('upiId').textContent;
+    navigator.clipboard.writeText(upi)
+      .then(()=>alert('✅ UPI ID copied! '+upi))
+      .catch(()=>prompt('Copy this UPI ID:',upi));
+  }
+
+  /* ── Close modal on outside click ── */
+  window.addEventListener('click',e=>{
+    const modal=document.getElementById('qrModal');
+    if(e.target===modal)modal.classList.remove('active');
+  });
+</script>
 </body>
 </html>

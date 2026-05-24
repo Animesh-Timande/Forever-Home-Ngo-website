@@ -1,93 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact | Forever Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="Photo/logo.png">
-       <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">
-        <img src="Photo/logo.png" alt="Forever Home Logo">
-        <span>Forever Home</span>
-    </div>
-
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <div class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="adopt.html">Adopt</a>
-        <a href="support.html">Support</a>
-        <a href="story.html">Stories</a>
-        <a href="#">Contact</a>
-        <a href="donat.html" class="btn-nav">Donate</a>
-    </div>
-</nav>
-<br>
-<div class="container mt-5">
-    <div class="card shadow p-4">
-        <h3 class="text-center mb-4">Contact Forever Home 🐾</h3>
-
-        <form id="contactForm">
-
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" id="fullName" class="form-control" required>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Email</label>
-                    <input type="email" id="email" class="form-control" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Phone</label>
-                    <input type="tel" id="phone" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Reason</label>
-                <select id="reason" class="form-control" required>
-                    <option value="" disabled selected>Select reason</option>
-                    <option value="Adoption Inquiry">Adoption Inquiry</option>
-                    <option value="Donation Support">Donation Support</option>
-                    <option value="Volunteer">Volunteer</option>
-                    <option value="Rescue Help">Rescue Help</option>
-                    <option value="General Question">General Question</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Message </label>
-                <textarea id="message" class="form-control" rows="4" required></textarea>
-            </div>
-
-            <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
-            
-                    Send Message ❤️
-         
-                
-            </button>
-
-            <p id="formStatus" class="text-center mt-3"></p>
-
-        </form>
-    </div>
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="so-circle">🐾</div>
+  <h2>Message <em>Sent!</em></h2>
+  <p>Thank you so much for reaching out. Our team will get back to you within 24 hours — with warmth and care.</p>
+  <button class="so-close" onclick="document.getElementById('successOverlay').classList.remove('show')">Close ✕</button>
 </div>
 
-<!-- Supabase CDN -->
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="#" class="active">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hblob b1"></div>
+  <div class="hblob b2"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🐾 &nbsp; We're Always Here</div>
+    <h1>Reach Out &amp;<br><em>Change a Life</em></h1>
+    <p class="lead">Whether you want to adopt, donate, volunteer, or simply ask a question — every message you send us helps save another beautiful soul.</p>
+    <div class="hero-pills">
+      <span class="hero-pill" onclick="scrollToForm()">🐶 Adoption Query</span>
+      <span class="hero-pill" onclick="scrollToForm()">🚑 Report Rescue</span>
+      <span class="hero-pill" onclick="scrollToForm()">🤝 Volunteer</span>
+      <span class="hero-pill" onclick="scrollToForm()">💛 Donate</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Connect</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- EMOTION STRIP -->
+<div class="emotion-strip rev">
+  <span class="ei">🐶</span>
+  <p>"Every message you send could be the very first step that saves an animal's life. We read every word — and we respond with all our heart."</p>
+  <span class="ei">🐱</span>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-sec" id="contactSection">
+  <div class="contact-wrap">
+
+    <!-- Left Info -->
+    <div class="info-panel">
+      <div class="info-intro rev-l">
+        <span class="sec-label">Get In Touch</span>
+        <h2>We'd <em>Love</em> to<br>Hear from You</h2>
+        <br>
+        <p>Our team answers every question about adoption, rescue, volunteering, and donations. No message is too small — each one matters deeply to us.</p>
+      </div>
+      <div class="info-cards rev-l">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div class="info-text"><strong>Our Shelter</strong><span>Wardha, Maharashtra, India</span></div>
+        </div>
+        <!-- <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div class="info-text"><strong>Call / WhatsApp</strong><span>Available for urgent rescue help</span></div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div class="info-text"><strong>Email</strong><span>support@foreverhome.org</span></div>
+        </div> -->
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <div class="info-text"><strong>Response Time</strong><span>We reply within 24 hours, always</span></div>
+        </div>
+      </div>
+      <div class="urgency-card rev-l">
+        <h4>🚨 Emergency Rescue?</h4>
+        <p>Spotted an injured or abandoned animal on the streets? Don't wait. Reach out right now — every minute matters to a life in danger.</p>
+        <span class="urgency-btn" onclick="scrollToForm();pickChipByVal('Rescue Help')">Send Emergency Message ⚡</span>
+      </div>
+    </div>
+
+    <!-- Right Form -->
+    <div class="form-card rev-r">
+      <div class="form-head">
+        <h3>Send Us a <em>Message</em></h3>
+        <p>Fill in the details below — our team responds with care and speed.</p>
+      </div>
+      <form id="contactForm" autocomplete="off" novalidate>
+        <div class="fgroup">
+          <label>Full Name</label>
+          <input type="text" id="fullName" placeholder="Your full name" required>
+        </div>
+        <div class="frow">
+          <div class="fgroup">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </div>
+          <div class="fgroup">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <div class="fgroup">
+          <span class="chip-label">How Can We Help?</span>
+          <div class="reason-chips" id="chipGroup">
+            <button type="button" class="reason-chip" data-val="Adoption Inquiry" onclick="pickChip(this)">🐶 Adoption</button>
+            <button type="button" class="reason-chip" data-val="Donation Support" onclick="pickChip(this)">💛 Donation</button>
+            <button type="button" class="reason-chip" data-val="Volunteer"        onclick="pickChip(this)">🤝 Volunteer</button>
+            <button type="button" class="reason-chip" data-val="Rescue Help"      onclick="pickChip(this)">🚑 Rescue Help</button>
+            <button type="button" class="reason-chip" data-val="General Question" onclick="pickChip(this)">💬 General</button>
+          </div>
+          <input type="hidden" id="reason">
+        </div>
+        <div class="fgroup">
+          <label>Your Message</label>
+          <textarea id="message" placeholder="Tell us what's on your mind. Every detail helps us help them better…" required></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="submit-btn">Send Message ❤️</button>
+        <p id="formStatus"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY CONTACT -->
+<section class="why-sec">
+  <div class="why-inner">
+    <span class="sec-label rev">Every Word Matters</span>
+    <h2 class="sec-title rev" style="color:#fff;">Your Voice <em>Saves Lives</em> 🐾</h2>
+    <p class="sec-body rev">Every inquiry brings us one step closer to rescuing another animal. Your words create action.</p>
+    <div class="why-grid">
+      <div class="why-card rev">
+        <span class="wc-icon">🐶</span>
+        <h4>Adoption Inquiries</h4>
+        <p>Want to give a pet a forever home? We'll guide you through every step with patience and love.</p>
+      </div>
+      <div class="why-card rev">
+        <span class="wc-icon">🚑</span>
+        <h4>Report a Rescue</h4>
+        <p>Spotted an injured animal? Contact us immediately. Every minute matters to a life in danger.</p>
+      </div>
+      <div class="why-card rev">
+        <span class="wc-icon">🤝</span>
+        <h4>Join Our Mission</h4>
+        <p>Want to volunteer, foster, or partner with us? We welcome every kind heart ready to make a difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise-sec">
+  <div class="promise-hdr">
+    <span class="sec-label rev">Our Commitment</span>
+    <h2 class="sec-title rev">Our <em>Promise</em> to You</h2>
+    <p class="sec-body rev" style="max-width:480px;margin:0 auto;">When you reach out, you join a family that truly cares — for people and animals alike.</p>
+  </div>
+  <div class="promise-grid">
+    <div class="promise-card rev">
+      <span class="pc-icon">⚡</span>
+      <h4>Fast Response</h4>
+      <p>We reply to every message within 24 hours. For rescue emergencies, we respond even faster — any time, any day.</p>
+    </div>
+    <div class="promise-card rev">
+      <span class="pc-icon">💛</span>
+      <h4>Genuine Care</h4>
+      <p>Every message is read personally and answered with warmth. You matter to us as much as the animals we protect.</p>
+    </div>
+    <div class="promise-card rev">
+      <span class="pc-icon">🔒</span>
+      <h4>100% Private</h4>
+      <p>Your information stays safe with us. We never share, sell, or misuse your data — your privacy is sacred here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-sec">
+  <div class="map-inner">
+    <div class="map-hdr">
+      <span class="sec-label rev">Find Us</span>
+      <h2 class="sec-title rev">Visit Our <em>Shelter</em> 📍</h2>
+      <p class="sec-body rev" style="max-width:480px;margin:0 auto;">Come meet our animals in person. We'd love to introduce you to the furry friends waiting for their forever family.</p>
+    </div>
+    <div class="map-frame rev-s">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59696.72220513952!2d78.57148569897889!3d20.74896450902372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f04f15aa69d%3A0xe76e35b13382a66c!2sWardha%2C%20Maharashtra!5e0!3m2!1sen!2sin" loading="lazy" title="Forever Home Location"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2 class="rev">Can't Wait to <em>Hear</em> from You 🐾</h2>
+    <p class="rev">Whether it's one question or a life-changing decision — we're ready. An animal's life might depend on it.</p>
+    <div class="cta-btns">
+      <a href="donat.html"   class="btn-solid rev">Donate Now ❤️</a>
+      <a href="adopt.html"   class="btn-ghost rev">Adopt a Pet 🐶</a>
+      <a href="support.html" class="btn-ghost rev">Support Us 🤝</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a><a href="donat.html">Donate</a><a href="#">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Get Involved</h4>
+      <a href="support.html">Support Us</a><a href="story.html">Rescue Stories</a>
+      <a href="#">Volunteer</a><a href="donat.html">Foster a Pet</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
+</footer>
+
+<!-- SUPABASE CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Your JS -->
-<script src="contact.js"></script>
-<script src="app.js"></script>
+<script>
+  /* Navbar */
+  const toggle=document.getElementById('menu-toggle'),navLinks=document.getElementById('nav-links'),navbar=document.getElementById('navbar');
+  toggle.addEventListener('click',()=>{
+    navLinks.classList.toggle('active');
+    const spans=toggle.querySelectorAll('span'),open=navLinks.classList.contains('active');
+    spans[0].style.transform=open?'rotate(45deg) translate(5px,5px)':'';
+    spans[1].style.opacity=open?'0':'';
+    spans[2].style.transform=open?'rotate(-45deg) translate(5px,-5px)':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }));
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>50));
 
+  /* Scroll Reveal */
+  const allR=document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-s');
+  const ro=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*85);ro.unobserve(e.target);}});
+  },{threshold:0.1});
+  allR.forEach(el=>ro.observe(el));
+
+  /* Chips */
+  function pickChip(btn){
+    document.querySelectorAll('.reason-chip').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('reason').value=btn.dataset.val;
+  }
+  function pickChipByVal(val){
+    document.querySelectorAll('.reason-chip').forEach(c=>{
+      if(c.dataset.val===val){c.classList.add('active');document.getElementById('reason').value=val;}
+      else c.classList.remove('active');
+    });
+  }
+  function scrollToForm(){document.getElementById('contactSection').scrollIntoView({behavior:'smooth'});}
+
+  /* ── SUPABASE FORM (same logic as original contact.js) ── */
+  document.addEventListener("DOMContentLoaded", function () {
+    const supabaseUrl = "https://mecetdwgvglqrppcxwbm.supabase.co";
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lY2V0ZHdndmdscXJwcGN4d2JtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyMjY0NjcsImV4cCI6MjA4NjgwMjQ2N30.Sj_QrkxMrHtm2TC-PdjONR5GLaT0dcdHOQHSoYKf09Y";
+    const supabase   = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    const form       = document.getElementById("contactForm");
+    const statusText = document.getElementById("formStatus");
+    const submitBtn  = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const reason = document.getElementById("reason").value;
+      if (!reason) {
+        statusText.innerHTML   = "⚠️ Please select a reason using the buttons above.";
+        statusText.className   = "error";
+        return;
+      }
+
+      submitBtn.disabled  = true;
+      submitBtn.innerText = "Sending…";
+      statusText.innerHTML= "";
+      statusText.className= "";
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const email    = document.getElementById("email").value.trim();
+      const phone    = document.getElementById("phone").value.trim();
+      const message  = document.getElementById("message").value.trim();
+
+      try {
+        const { error } = await supabase
+          .from("contact_messages")
+          .insert([{ full_name: fullName, email, phone, reason, message }]);
+
+        if (error) throw error;
+
+        /* Show success overlay */
+        document.getElementById("successOverlay").classList.add("show");
+
+        form.reset();
+        document.querySelectorAll(".reason-chip").forEach(c=>c.classList.remove("active"));
+        document.getElementById("reason").value = "";
+        statusText.className = "";
+
+      } catch (error) {
+        console.error("Insert Error:", error);
+        statusText.innerHTML = "❌ " + error.message;
+        statusText.className = "error";
+      }
+
+      submitBtn.disabled  = false;
+      submitBtn.innerText = "Send Message ❤️";
+    });
+  });
+</script>
 </body>
 </html>

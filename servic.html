@@ -1,48 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Helping Paws - Services</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Helping Paws</h1>
-  <nav>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="servic.html">Services</a>
-    <a href="team.html">Team</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
     <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
+</nav>
 
-<section class="section services">
-  <h2>Our Services</h2>
-  <div class="card-grid">
-    <div class="card">
-      <img src="images/vac.jpg" alt="Vaccination"/>
-      <h3>Vaccination Programs</h3>
-      <p>Free vaccinations to protect street dogs from diseases.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hblob b1"></div>
+  <div class="hblob b2"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🐾 &nbsp; What We Do</div>
+    <h1>Our <em>Services</em><br>&amp; Care Programs</h1>
+    <p class="lead">From emergency rescue to medical treatment, from shelter to forever homes — every service we offer is powered by love and your generous support.</p>
+  </div>
+  <div class="scroll-hint"><span>Explore</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- EMOTION STRIP -->
+<div class="emotion-strip rev">
+  <span class="ei">🐶</span>
+  <p>"Each service we provide is a second chance — a chance to live, to heal, and to feel loved again."</p>
+  <span class="ei">🐱</span>
+</div>
+
+<!-- CORE SERVICES -->
+<section class="sec services-sec">
+  <div class="sec-center">
+    <span class="sec-label rev">Core Programs</span>
+    <h2 class="sec-title rev">How We <em>Help</em> Every Animal</h2>
+    <p class="sec-body rev">Three pillars that form the foundation of everything we do — rescue, heal, rehome.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card rev">
+      <div class="sc-img">
+        <img src="Photo/puppy.jfif" alt="Vaccination" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="sc-emoji" style="display:none;">💉</span>
+        <span class="sc-tag">Free Program</span>
+      </div>
+      <div class="sc-body">
+        <h3>Vaccination Programs</h3>
+        <p>We provide free vaccinations to protect street dogs and cats from deadly diseases like rabies, parvovirus, and distemper. No animal is left unprotected.</p>
+        <a href="contact.html" class="sc-link">Learn More →</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/med.jpg" alt="Medical Aid"/>
-      <h3>Medical Aid</h3>
-      <p>Medical treatments for injured and sick street dogs.</p>
+
+    <div class="service-card rev">
+      <div class="sc-img">
+        <img src="Photo/puppysave.jfif" alt="Medical Aid" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="sc-emoji" style="display:none;">🏥</span>
+        <span class="sc-tag">Emergency Care</span>
+      </div>
+      <div class="sc-body">
+        <h3>Medical Aid &amp; Treatment</h3>
+        <p>Injured and sick animals receive immediate veterinary attention — surgeries, wound dressing, pain relief, and full recovery monitoring by our medical team.</p>
+        <a href="contact.html" class="sc-link">Learn More →</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/food.jpg" alt="Food Distribution"/>
-      <h3>Food Distribution</h3>
-      <p>Regular feeding programs for healthy and strong dogs.</p>
+
+    <div class="service-card rev">
+      <div class="sc-img">
+        <img src="Photo/foodgiving.jpg" alt="Food Distribution" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="sc-emoji" style="display:none;">🍖</span>
+        <span class="sc-tag">Daily Program</span>
+      </div>
+      <div class="sc-body">
+        <h3>Food Distribution</h3>
+        <p>Our volunteers run daily feeding drives, providing nutritious meals to street animals across Wardha and nearby cities — because no animal should go to sleep hungry.</p>
+        <a href="contact.html" class="sc-link">Learn More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band">
+  <div class="stats-inner">
+    <h2 class="rev">Our Services in <em style="font-style:italic;">Numbers</em></h2>
+    <div class="stats-grid">
+      <div class="stat-card rev"><span class="si">🐶</span><h3 data-count="500">0+</h3><p>Animals Rescued</p></div>
+      <div class="stat-card rev"><span class="si">💉</span><h3 data-count="300">0+</h3><p>Treatments Given</p></div>
+      <div class="stat-card rev"><span class="si">🍖</span><h3 data-count="1200">0+</h3><p>Meals Served</p></div>
+      <div class="stat-card rev"><span class="si">🏠</span><h3 data-count="20">0+</h3><p>Adoptions</p></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2025 Helping Paws Dog NGO</p>
+<!-- HOW WE HELP PROCESS -->
+<section class="sec process-sec sec-center">
+  <span class="sec-label rev">Step by Step</span>
+  <h2 class="sec-title rev" style="color:#fff;">How We <em>Rescue</em> Every Animal</h2>
+  <p class="sec-body rev">From the moment we get a call to the day a pet finds their forever home — here's our journey together.</p>
+  <div class="process-grid">
+    <div class="process-card rev">
+      <div class="p-num">1</div>
+      <h4>Emergency Call</h4>
+      <p>We receive rescue reports from community members and respond within hours to injured or abandoned animals.</p>
+    </div>
+    <div class="process-card rev">
+      <div class="p-num">2</div>
+      <h4>Rescue &amp; Transport</h4>
+      <p>Our volunteers safely rescue the animal and transport it to our shelter with care and urgency.</p>
+    </div>
+    <div class="process-card rev">
+      <div class="p-num">3</div>
+      <h4>Medical Treatment</h4>
+      <p>Immediate vet assessment, treatment, surgeries if needed, and round-the-clock monitoring until recovery.</p>
+    </div>
+    <div class="process-card rev">
+      <div class="p-num">4</div>
+      <h4>Forever Home</h4>
+      <p>Once healthy, we match each animal with the perfect loving family through our adoption program.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXTENDED SERVICES -->
+<section class="sec extended-sec">
+  <div class="sec-center">
+    <span class="sec-label rev">More Programs</span>
+    <h2 class="sec-title rev">All the Ways We <em>Care</em></h2>
+    <p class="sec-body rev">Beyond our core programs, we run several specialized services to ensure complete wellbeing for every animal.</p>
+  </div>
+  <div class="ext-grid">
+    <div class="ext-card rev">
+      <span class="ext-icon">🏠</span>
+      <h4>Shelter &amp; Housing</h4>
+      <p>Safe, clean, and loving temporary shelter for rescued animals while they wait for their forever home.</p>
+    </div>
+    <div class="ext-card rev">
+      <span class="ext-icon">✂️</span>
+      <h4>Spay &amp; Neuter</h4>
+      <p>Free sterilization programs to responsibly control the street animal population and improve their health.</p>
+    </div>
+    <div class="ext-card rev">
+      <span class="ext-icon">🐾</span>
+      <h4>Rehabilitation</h4>
+      <p>Behavioral and physical rehabilitation for traumatized animals to help them trust humans again and thrive.</p>
+    </div>
+    <div class="ext-card rev">
+      <span class="ext-icon">📋</span>
+      <h4>Adoption Counseling</h4>
+      <p>We guide every adopter with personalized advice on care, diet, training, and long-term pet parenting.</p>
+    </div>
+    <div class="ext-card rev">
+      <span class="ext-icon">🎓</span>
+      <h4>Community Awareness</h4>
+      <p>School programs and community events educating people about animal welfare, empathy, and co-existence.</p>
+    </div>
+    <div class="ext-card rev">
+      <span class="ext-icon">📞</span>
+      <h4>24/7 Helpline</h4>
+      <p>Round-the-clock rescue reporting line — because emergencies don't follow business hours, and neither do we.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER BAND -->
+<section class="sec vol-band">
+  <div class="vol-inner">
+    <div class="vol-text rev-l">
+      <span class="sec-label">Join Our Team</span>
+      <h2>Help Us <em>Serve</em> More Animals</h2>
+      <p>Our services run on the compassion of volunteers like you. Whether you can drive, cook, treat, or simply care — there's a place for you on our team.</p>
+      <div class="vol-btns">
+        <a href="contact.html" class="btn-solid">Volunteer Now 🤝</a>
+        <a href="donat.html" class="btn-outline">Donate Instead ❤️</a>
+      </div>
+    </div>
+    <div class="vol-visual rev-r">🐕</div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2 class="rev">Support Our <em>Services</em> 🐾</h2>
+    <p class="rev">Every program we run is funded by kind hearts like yours. Help us do more, reach more, and save more.</p>
+    <div class="cta-btns">
+      <a href="donat.html"   class="btn-solid rev">Donate Now ❤️</a>
+      <a href="adopt.html"   class="btn-ghost rev">Adopt a Pet 🐶</a>
+      <a href="contact.html" class="btn-ghost rev">Contact Us 📞</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a><a href="donat.html">Donate</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Our Services</h4>
+      <a href="#">Vaccination</a><a href="#">Medical Aid</a>
+      <a href="#">Food Distribution</a><a href="#">Shelter</a><a href="#">Adoption</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
 </footer>
 
+<script>
+  /* Navbar */
+  const toggle=document.getElementById('menu-toggle'),navLinks=document.getElementById('nav-links'),navbar=document.getElementById('navbar');
+  toggle.addEventListener('click',()=>{
+    navLinks.classList.toggle('active');
+    const spans=toggle.querySelectorAll('span'),open=navLinks.classList.contains('active');
+    spans[0].style.transform=open?'rotate(45deg) translate(5px,5px)':'';
+    spans[1].style.opacity=open?'0':'';
+    spans[2].style.transform=open?'rotate(-45deg) translate(5px,-5px)':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }));
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>50));
+
+  /* Scroll Reveal */
+  const allR=document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-s');
+  const ro=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*85);ro.unobserve(e.target);}});
+  },{threshold:0.1});
+  allR.forEach(el=>ro.observe(el));
+
+  /* Counter */
+  function countUp(el,end){
+    let n=0;const step=end/55;
+    const timer=setInterval(()=>{
+      n+=step;
+      if(n>=end){el.textContent=end+'+';clearInterval(timer);}
+      else el.textContent=Math.floor(n)+'+';
+    },28);
+  }
+  const countEls=document.querySelectorAll('[data-count]');
+  const co=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){countUp(e.target,parseInt(e.target.dataset.count));co.unobserve(e.target);}});
+  },{threshold:.3});
+  countEls.forEach(el=>co.observe(el));
+</script>
 </body>
 </html>

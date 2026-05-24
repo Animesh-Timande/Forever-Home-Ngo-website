@@ -1,175 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Support Us</title>
-       <link rel="icon" href="Photo/logo.png">
-   <link rel="stylesheet" href="style.css">
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Us | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<!-- navbar -->
-   <nav class="navbar">
-    <div class="logo">
-        <img src="Photo/logo.png">
-        <span>Forever Home</span>
-    </div>
 
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <div class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="adopt.html">Adopt</a>
-        <a href="#">Support</a>
-        <a href="story.html">Stories</a>
-        <a href="contact.html">Contact</a>
-        <a href="donat.html" class="btn-nav">Donate</a>
-    </div>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="#" class="active">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
 </nav>
-    <!-- HERO SECTION -->
-<section class="support-hero text-white text-center d-flex align-items-center">
-    <div class="container">
-        <h1>Support Their Second Chance 🐾</h1>
-        <p class="lead">Every act of kindness begins with one paw closer to a happy ending.</p>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hblob b1"></div>
+  <div class="hblob b2"></div>
+  <div class="hblob b3"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🐾 &nbsp; Make a Difference</div>
+    <h1>Support Their<br><em>Second Chance</em> 🐾</h1>
+    <p class="lead">Every act of kindness begins with one paw closer to a happy ending. Choose how you want to change a life today — there's a way for everyone.</p>
+    <div class="hero-ways">
+      <span class="hw-pill">🐶 Adopt</span>
+      <span class="hw-pill">🏠 Foster</span>
+      <span class="hw-pill">💖 Donate</span>
+      <span class="hw-pill">🤝 Volunteer</span>
     </div>
+  </div>
+  <div class="scroll-hint"><span>How to Help</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- HOW YOU CAN HELP -->
-<section class="help-section py-5">
+<!-- EMOTION STRIP -->
+<div class="emotion-strip rev">
+  <span class="ei">🐶</span>
+  <p>"They don't ask for much — just love, warmth, and someone to care. Your support turns fear into trust, and loneliness into lifelong companionship."</p>
+  <span class="ei">🐱</span>
+</div>
 
-    <!-- Title Container (Small & Centered) -->
-    <div class="container text-center" style="max-width: 650px;">
-        <h2 class="section-title">How You Can Change a Life 🐾</h2>
-        <p class="section-subtitle mt-3">
-            Every act of kindness begins with one paw closer to a happy ending.
-        </p>
-    </div>
-
-    <!-- Cards Container (Separate Container) -->
-    <div class="container mt-5">
-        <div class="row justify-content-center g-4">
-
-            <!-- ADOPT -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-               <a href="adopt.html">
-                 <div class="help-card text-center">
-                    <div class="icon">🐶</div>
-                    <h5>Adopt</h5>
-                    <p>Give a rescued pet a loving home and a forever family.</p>
-                </div>
-               </a>
-            </div>
-
-            <!-- FOSTER -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="donat.html">
-                    <div class="help-card text-center">
-                    <div class="icon">🏠</div>
-                    <h5>Foster</h5>
-                    <p>Provide temporary care and warmth while they wait for adoption.</p>
-                </div>
-                </a>
-            </div>
-
-            <!-- DONATE -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="donat.html">
-                    <div class="help-card text-center">
-                    <div class="icon">💖</div>
-                    <h5>Donate</h5>
-                    <p>Your support provides food, shelter, and medical care.</p>
-                </div>
-                </a>
-            </div>
-
-            <!-- VOLUNTEER -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="about.html">
-                    <div class="help-card text-center">
-                    <div class="icon">🤝</div>
-                    <h5>Volunteer</h5>
-                    <p>Share your time and compassion to bring joy to rescued souls.</p>
-                </div>
-                </a>
-            </div>
-
-        </div>
-    </div>
-
+<!-- HOW TO HELP -->
+<section class="sec help-sec">
+  <div class="sec-center">
+    <span class="sec-label rev">Ways to Give</span>
+    <h2 class="sec-title rev">How You Can <em>Change a Life</em> 🐾</h2>
+    <p class="sec-body rev">Every act of kindness begins with one paw closer to a happy ending. Pick the way that feels right for you.</p>
+  </div>
+  <div class="help-grid">
+    <a href="adopt.html" class="help-card rev">
+      <span class="hc-icon">🐶</span>
+      <h5>Adopt</h5>
+      <p>Give a rescued pet a loving home and a forever family. The greatest gift you can give — a lifetime of belonging.</p>
+      <span class="hc-arrow">Meet Our Pets →</span>
+    </a>
+    <a href="donat.html" class="help-card rev">
+      <span class="hc-icon">🏠</span>
+      <h5>Foster</h5>
+      <p>Provide temporary care and warmth while they wait for adoption. Even a few weeks in a loving home can change everything.</p>
+      <span class="hc-arrow">Start Fostering →</span>
+    </a>
+    <a href="donat.html" class="help-card rev">
+      <span class="hc-icon">💖</span>
+      <h5>Donate</h5>
+      <p>Your support directly provides food, shelter, and medical care. Every rupee goes to an animal that needs it most.</p>
+      <span class="hc-arrow">Donate Now →</span>
+    </a>
+    <a href="contact.html" class="help-card rev">
+      <span class="hc-icon">🤝</span>
+      <h5>Volunteer</h5>
+      <p>Share your time and compassion to bring joy to rescued souls. Walk them, feed them, love them — it matters more than you know.</p>
+      <span class="hc-arrow">Join Our Team →</span>
+    </a>
+  </div>
 </section>
 
-
-
-
-<!-- EMOTIONAL STORY SECTION -->
-<section class="story-section text-white text-center py-5">
-    <div class="container">
-        <h2>Because They Feel Too ❤️</h2>
-        <p class="mt-3">
-            Behind every rescued pet is a story of survival, hope, and silent tears.  
-            They don’t ask for much — just love, warmth, and someone to care.
-        </p>
-        <p>
-            Your support turns fear into trust, hunger into comfort,  
-            and loneliness into lifelong companionship.
-        </p>
+<!-- EMOTIONAL STORY BAND -->
+<section class="story-band">
+  <div class="story-inner">
+    <div class="story-grid2">
+      <div class="story-text rev-l">
+        <span class="sec-label">Because They Feel Too</span>
+        <h2 class="sec-title">They Don't Ask for <em>Much</em> ❤️</h2>
+        <p class="sec-body">Behind every rescued pet is a story of survival, hope, and silent tears. They've been through hunger, pain, and abandonment — yet they still wag their tails when kindness arrives.</p>
+        <div class="story-pull">"Your support turns their fear into trust, their hunger into comfort, and their loneliness into lifelong companionship."</div>
+        <a href="story.html" class="btn-solid" style="display:inline-block;">Read Their Stories →</a>
+      </div>
+      <div class="story-visual rev-r">
+        <span class="sv-icon">🐾</span>
+        <h3>Every Life You Touch Matters</h3>
+        <p>500+ animals have been rescued because people like you chose to care. Your support — no matter how small — creates a real, lasting difference in a life that desperately needed it.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-
-<!-- CALL TO ACTION -->
-<section class="cta-section text-center py-5">
-    <div class="container">
-        <h2>Be the Reason a Tail Wags Today 🐾</h2>
-        <p class="mb-4">Together, we can rewrite their story into one filled with love.</p>
-        <a href="donat.html" class="btn support-btn">Support Now</a>
+<!-- IMPACT NUMBERS -->
+<section class="impact-band">
+  <div class="impact-inner">
+    <h2 class="rev">The Difference <em style="font-style:italic;">Your Support</em> Makes</h2>
+    <div class="impact-grid">
+      <div class="imp-card rev"><span class="ii">🐶</span><h3 data-count="500">0+</h3><p>Animals Rescued</p></div>
+      <div class="imp-card rev"><span class="ii">🏠</span><h3 data-count="20">0+</h3><p>Adopted</p></div>
+      <div class="imp-card rev"><span class="ii">💊</span><h3 data-count="300">0+</h3><p>Medical Treatments</p></div>
+      <div class="imp-card rev"><span class="ii">👥</span><h3 data-count="15">0+</h3><p>Volunteers</p></div>
     </div>
+  </div>
 </section>
 
+<!-- MORE WAYS TO SUPPORT -->
+<section class="sec ways-sec">
+  <div class="sec-center">
+    <span class="sec-label rev">Even More Ways</span>
+    <h2 class="sec-title rev">Every <em>Kind Act</em> Counts 🌟</h2>
+    <p class="sec-body rev">Beyond adopting and donating, there are many meaningful ways to support our mission every day.</p>
+  </div>
+  <div class="ways-grid">
+    <div class="way-card rev">
+      <span class="wc-icon">📢</span>
+      <h4>Spread the Word</h4>
+      <p>Share our stories on social media. Every share increases our reach and could find a rescue animal their forever home.</p>
+    </div>
+    <div class="way-card rev">
+      <span class="wc-icon">🛍️</span>
+      <h4>Donate Supplies</h4>
+      <p>Dog food, blankets, medicines, and toys are always needed. Donate in-kind supplies to directly help shelter animals.</p>
+    </div>
+    <div class="way-card rev">
+      <span class="wc-icon">🏢</span>
+      <h4>Corporate Partnership</h4>
+      <p>Is your company looking to give back? Partner with us for CSR initiatives, events, and sponsorships that make a difference.</p>
+    </div>
+    <div class="way-card rev">
+      <span class="wc-icon">📸</span>
+      <h4>Fundraise for Us</h4>
+      <p>Host a birthday fundraiser, a bake sale, or a run. Every rupee raised for Forever Home saves a life.</p>
+    </div>
+    <div class="way-card rev">
+      <span class="wc-icon">🩺</span>
+      <h4>Vet Support</h4>
+      <p>Are you a veterinarian or animal health professional? We'd love your expertise to care for our rescued animals.</p>
+    </div>
+    <div class="way-card rev">
+      <span class="wc-icon">🎓</span>
+      <h4>Awareness Programs</h4>
+      <p>Help us educate schools and communities about animal welfare, compassion, and responsible pet ownership.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION TIERS -->
+<section class="sec tiers-sec sec-center">
+  <span class="sec-label rev">Choose Your Impact</span>
+  <h2 class="sec-title rev">Pick Your <em>Support Level</em> 💛</h2>
+  <p class="sec-body rev">Every tier makes a real, measurable difference. Choose what feels right for you.</p>
+  <div class="tiers-grid">
+
+    <div class="tier-card basic rev">
+      <div class="tier-amount">₹500</div>
+      <div class="tier-period">One-time donation</div>
+      <h4>Friend of Paws</h4>
+      <ul class="tier-list">
+        <li><span class="tier-check">🍖</span> Feeds 15 street dogs</li>
+        <li><span class="tier-check">💊</span> Basic medical supplies</li>
+        <li><span class="tier-check">❤️</span> Certificate of kindness</li>
+      </ul>
+      <button class="tier-btn" onclick="window.location.href='donat.html'">Donate ₹500</button>
+    </div>
+
+    <div class="tier-card popular rev">
+      <div class="tier-popular-badge">Most Impactful</div>
+      <div class="tier-amount">₹2,000</div>
+      <div class="tier-period">One-time donation</div>
+      <h4>Guardian Angel</h4>
+      <ul class="tier-list">
+        <li><span class="tier-check">🚑</span> Fund an emergency rescue</li>
+        <li><span class="tier-check">🏥</span> Full medical treatment</li>
+        <li><span class="tier-check">🏠</span> One month of shelter</li>
+        <li><span class="tier-check">🐾</span> Named thank-you story</li>
+      </ul>
+      <button class="tier-btn" onclick="window.location.href='donat.html'">Donate ₹2,000</button>
+    </div>
+
+    <div class="tier-card popular rev">
+      <div class="tier-amount">₹10,000</div>
+      <div class="tier-period">One-time donation</div>
+      <h4>Forever Hero</h4>
+      <ul class="tier-list">
+        <li><span class="tier-check">🐶</span> Sponsor one animal fully</li>
+        <li><span class="tier-check">📋</span> 3-month progress updates</li>
+        <li><span class="tier-check">🎖️</span> Sponsor wall recognition</li>
+        <li><span class="tier-check">🤝</span> VIP shelter visit invite</li>
+      </ul>
+      <button class="tier-btn" onclick="window.location.href='donat.html'">Become a Hero</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <span class="sec-label rev">What Our Supporters Say</span>
+  <h2 class="sec-title rev">People Who <em>Chose to Care</em> 💬</h2>
+  <div class="testi-grid">
+    <div class="testi-card rev">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Volunteering at Forever Home was one of the most meaningful experiences of my life. Seeing these animals go from broken to joyful — nothing compares to that feeling."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><strong>Ananya S.</strong><span>Volunteer, Nagpur</span></div>
+      </div>
+    </div>
+    <div class="testi-card rev">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I donated ₹500 for Bruno's treatment. A month later I got a photo of him playing in a garden. That photo is on my desk. It's the best investment I've ever made."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div><strong>Rohan M.</strong><span>Donor, Wardha</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2 class="rev">Be the Reason a <em>Tail Wags</em> Today 🐾</h2>
+    <p class="cta-sub rev">"Together, we can rewrite their story into one filled with love."</p>
+    <p class="rev">It doesn't take much to change an animal's entire world. Choose your way to help — and let's write the next chapter together.</p>
+    <div class="cta-btns">
+      <a href="donat.html"  class="btn-solid rev">Support Now ❤️</a>
+      <a href="adopt.html"  class="btn-ghost rev">Adopt a Pet 🐶</a>
+      <a href="contact.html" class="btn-ghost rev">Get in Touch 📞</a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer class="footer text-white pt-4">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
-                <h5>Forever Home Pet Shelter</h5>
-                <p>Giving abandoned pets a second chance at life and love.</p>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <h6>Quick Links</h6>
-                <ul class="list-unstyled">
-                    <li><a href="adopt.html">Adopt</a></li>
-                    <li><a href="support.html">Support Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class=" col-md-4 mb-3">
-               <a href="donat.html">
-                <h3>Donate Now</h3>
-               </a>
-            </div>
-
-        </div>
-
-        <hr class="bg-light">
-
-        <div class="text-center pb-3">
-            © 2026 Forever Home Pet Shelter | All Rights Reserved
-        </div>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
     </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a><a href="donat.html">Donate</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Support Ways</h4>
+      <a href="adopt.html">Adopt</a><a href="donat.html">Foster</a>
+      <a href="donat.html">Donate</a><a href="contact.html">Volunteer</a><a href="story.html">Stories</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | All Rights Reserved ❤️</div>
 </footer>
 
-    
+<script>
+  /* Navbar */
+  const toggle=document.getElementById('menu-toggle'),navLinks=document.getElementById('nav-links'),navbar=document.getElementById('navbar');
+  toggle.addEventListener('click',()=>{
+    navLinks.classList.toggle('active');
+    const spans=toggle.querySelectorAll('span'),open=navLinks.classList.contains('active');
+    spans[0].style.transform=open?'rotate(45deg) translate(5px,5px)':'';
+    spans[1].style.opacity=open?'0':'';
+    spans[2].style.transform=open?'rotate(-45deg) translate(5px,-5px)':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }));
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>50));
 
-    <script src="app.js"></script>
+  /* Scroll Reveal */
+  const allR=document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-s');
+  const ro=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*85);ro.unobserve(e.target);}});
+  },{threshold:0.1});
+  allR.forEach(el=>ro.observe(el));
+
+  /* Counter */
+  function countUp(el,end){
+    let n=0;const step=end/55;
+    const t=setInterval(()=>{n+=step;if(n>=end){el.textContent=end+'+';clearInterval(t);}else el.textContent=Math.floor(n)+'+';},28);
+  }
+  const co=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){countUp(e.target,parseInt(e.target.dataset.count));co.unobserve(e.target);}});
+  },{threshold:.3});
+  document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+</script>
 </body>
 </html>

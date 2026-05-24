@@ -1,135 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paws & Hearts Rescue - Volunteer</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .navbar {
-            background-color: #28a745 !important;
-            transition: background-color 0.3s ease;
-        }
-        .navbar:hover {
-            background-color: #218838 !important;
-        }
-        .section {
-            padding: 80px 0;
-        }
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .btn-custom {
-            background-color: #28a745;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-        .btn-custom:hover {
-            background-color: #218838;
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Paws & Hearts Rescue</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="adoption.html">Adoption</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Volunteer Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-4 animate-on-scroll">Volunteer With Us</h2>
-            <div class="row">
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Volunteering">
-                        <div class="card-body">
-                            <h5 class="card-title">Walk Dogs</h5>
-                            <p class="card-text">Help our furry friends get exercise and socialization.</p>
-                            <a href="contact.html" class="btn btn-custom">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Event volunteering">
-                        <div class="card-body">
-                            <h5 class="card-title">Event Support</h5>
-                            <p class="card-text">Assist at adoption events and fundraisers.</p>
-                            <a href="contact.html" class="btn btn-custom">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Foster care">
-                        <div class="card-body">
-                            <h5 class="card-title">Foster Care</h5>
-                            <p class="card-text">Provide temporary homes for dogs awaiting adoption.</p>
-                            <a href="contact.html" class="btn btn-custom">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2023 Paws & Hearts Rescue. All rights reserved.</p>
-    </footer>
+<!-- HERO -->
+<section class="hero">
+  <div class="hblob b1"></div>
+  <div class="hblob b2"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🤝 &nbsp; Join Our Team</div>
+    <h1>Volunteer &amp;<br><em>Change Lives</em> Together</h1>
+    <p class="lead">Every hour you give is an hour of warmth for an animal who has nothing. Your time, your compassion, your heart — that's what our rescued animals need most.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">🐕 Walk Dogs</span>
+      <span class="hero-pill">🏥 Medical Support</span>
+      <span class="hero-pill">🎪 Event Help</span>
+      <span class="hero-pill">🏠 Foster Care</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Explore Roles</span><div class="scroll-line"></div></div>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS for animations -->
-    <script>
-        // Animate on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
+<!-- EMOTION STRIP -->
+<div class="emotion-strip rev">
+  <span class="ei">🐶</span>
+  <p>"Volunteers don't get paid — not because they're worthless, but because they are priceless. And these animals feel every bit of that priceless love."</p>
+  <span class="ei">🐱</span>
+</div>
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+<!-- VOLUNTEER ROLES -->
+<section class="sec roles-sec">
+  <div class="sec-center">
+    <span class="sec-label rev">Open Roles</span>
+    <h2 class="sec-title rev">Ways to <em>Volunteer</em> With Us 🐾</h2>
+    <p class="sec-body rev">From walking dogs to supporting rescues — find the role that fits your passion and your schedule.</p>
+  </div>
+  <div class="roles-grid">
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Walk Dogs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="rc-placeholder" style="display:none;">🐕</div>
+        <span class="rc-tag">Most Needed</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">🦮</span>
+        <h3>Walk Dogs</h3>
+        <p>Help our rescued dogs get daily exercise, fresh air, and the social interaction they crave. Even an hour a week makes a huge difference to a dog waiting for their forever home.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80" alt="Event Support" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="rc-placeholder" style="display:none;">🎪</div>
+        <span class="rc-tag">Weekend Friendly</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">🎪</span>
+        <h3>Event Support</h3>
+        <p>Assist at adoption drives, awareness campaigns, and fundraisers. Help us reach more people, create connections, and find forever homes for our animals.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Foster Care" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="rc-placeholder" style="display:none;">🏠</div>
+        <span class="rc-tag">Life Changing</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">🏠</span>
+        <h3>Foster Care</h3>
+        <p>Provide a temporary loving home for animals awaiting adoption. Fosters save lives by freeing shelter space — and gain a bond unlike anything else in return.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <div class="rc-placeholder">🍖</div>
+        <span class="rc-tag">Daily Need</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">🍖</span>
+        <h3>Feeding Drives</h3>
+        <p>Join our feeding volunteers who ensure street animals and shelter residents get nutritious daily meals. This simple act keeps hundreds of animals healthy and strong.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <div class="rc-placeholder">🚑</div>
+        <span class="rc-tag">Urgent</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">🚑</span>
+        <h3>Rescue Transport</h3>
+        <p>Help us respond faster to emergency rescue calls by providing transport. Having your own vehicle could be the difference between life and death for an animal in distress.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+    <div class="role-card rev">
+      <div class="rc-img">
+        <div class="rc-placeholder">📸</div>
+        <span class="rc-tag">Creative</span>
+      </div>
+      <div class="rc-body">
+        <span class="rc-icon">📸</span>
+        <h3>Media &amp; Outreach</h3>
+        <p>Are you a photographer, designer, or social media enthusiast? Help us tell our animals' stories through beautiful content that reaches the hearts of potential adopters.</p>
+        <a href="contact.html" class="rc-link">Sign Up →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY VOLUNTEER -->
+<section class="sec why-sec">
+  <div class="why-inner">
+    <div class="why-grid">
+      <div class="why-text rev-l">
+        <span class="sec-label">Why It Matters</span>
+        <h2 class="sec-title">Your Time Is Their <em>Lifeline</em></h2>
+        <p class="sec-body">Volunteering isn't just about helping animals — it's about becoming part of something bigger than yourself. Here's what our volunteers tell us they gain:</p>
+        <ul class="why-list">
+          <li><span class="why-check">✓</span>A sense of purpose that money can't buy</li>
+          <li><span class="why-check">✓</span>Bonds with animals that heal the human heart</li>
+          <li><span class="why-check">✓</span>A community of like-minded, compassionate people</li>
+          <li><span class="why-check">✓</span>The joy of watching a broken animal become whole again</li>
+          <li><span class="why-check">✓</span>Official volunteer certification and reference letters</li>
+          <li><span class="why-check">✓</span>Skills in animal care, event management, and more</li>
+        </ul>
+      </div>
+      <div class="why-visual rev-r">
+        <span class="wv-icon">🐾</span>
+        <p class="wv-quote">"Volunteering here didn't just help the animals — it completely changed how I see the world. I came to give, and left feeling like I had received so much more."</p>
+        <cite class="wv-cite">— Ananya, Volunteer since 2022</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT BAND -->
+<section class="impact-band">
+  <div class="impact-inner">
+    <h2 class="rev">What Our <em style="font-style:italic;">Volunteers</em> Have Achieved</h2>
+    <div class="impact-grid">
+      <div class="imp-card rev"><span class="ii">👥</span><h3 data-count="15">0+</h3><p>Active Volunteers</p></div>
+      <div class="imp-card rev"><span class="ii">🐶</span><h3 data-count="500">0+</h3><p>Animals Helped</p></div>
+      <div class="imp-card rev"><span class="ii">⏰</span><h3 data-count="2000">0+</h3><p>Hours Donated</p></div>
+      <div class="imp-card rev"><span class="ii">🏙️</span><h3 data-count="5">0+</h3><p>Cities Covered</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO JOIN - STEPS -->
+<section class="sec steps-sec sec-center">
+  <span class="sec-label rev">Getting Started</span>
+  <h2 class="sec-title rev">How to <em>Join</em> Our Team</h2>
+  <p class="sec-body rev">Becoming a volunteer is simple, fast, and incredibly rewarding. Here's how to start your journey.</p>
+  <div class="steps-grid">
+    <div class="step-card rev">
+      <div class="s-num">1</div>
+      <h4>Fill the Form</h4>
+      <p>Head to our contact page and express your interest. Tell us which role excites you most.</p>
+    </div>
+    <div class="step-card rev">
+      <div class="s-num">2</div>
+      <h4>Orientation</h4>
+      <p>Attend a brief shelter orientation where you'll meet the team and learn about our animals.</p>
+    </div>
+    <div class="step-card rev">
+      <div class="s-num">3</div>
+      <h4>Get Matched</h4>
+      <p>We match you with the role that best fits your skills, schedule, and passion.</p>
+    </div>
+    <div class="step-card rev">
+      <div class="s-num">4</div>
+      <h4>Start Helping</h4>
+      <p>Begin your volunteer journey and experience the immeasurable joy of changing animal lives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEERS FROM CITIES -->
+<section class="sec cities-sec sec-center">
+  <span class="sec-label rev">Our Network</span>
+  <h2 class="sec-title rev">Volunteers Across <em>Our Region</em> 🤝</h2>
+  <p class="sec-body rev cities-inner">Compassionate hearts from nearby cities helping us save lives every single day.</p>
+  <div class="cities-grid">
+    <div class="city-card rev">
+      <div class="city-badge">📍 Washim</div>
+      <h5>Rahul</h5>
+      <p>Supports rescue missions and medical care drives across the region with dedication.</p>
+    </div>
+    <div class="city-card rev">
+      <div class="city-badge">📍 Wardha</div>
+      <h5>Prem &amp; Rutvik</h5>
+      <p>Organizes adoption events and community awareness programs with heart and energy.</p>
+    </div>
+    <div class="city-card rev">
+      <div class="city-badge">📍 Nagpur</div>
+      <h5>Aditya &amp; Tejas</h5>
+      <p>Provides emergency rescue and transport support around the clock, without fail.</p>
+    </div>
+    <div class="city-card rev">
+      <div class="city-badge">📍 Amravati</div>
+      <h5>Vedant &amp; Tejas</h5>
+      <p>Helps with feeding drives and daily shelter care operations every single day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <span class="sec-label rev">What Volunteers Say</span>
+  <h2 class="sec-title rev">Words from Our <em>Team</em> 💬</h2>
+  <div class="testi-grid">
+    <div class="testi-card rev">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Walking the dogs every Saturday is the highlight of my week. Seeing their tails wag when they see me arrive is the greatest feeling in the world. I came to help them — they ended up healing me."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div><strong>Ananya S.</strong><span>Dog Walker Volunteer, Nagpur</span></div>
+      </div>
+    </div>
+    <div class="testi-card rev">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I started fostering one dog for two weeks. That was two years ago. Being part of Forever Home's volunteer team has given me friendships, purpose, and more joy than I can explain."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div><strong>Rohan M.</strong><span>Foster Volunteer, Wardha</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2 class="rev">Ready to <em>Make a Difference?</em> 🐾</h2>
+    <p class="rev">Your hands, your heart, your time — that's all it takes to change an animal's entire world. Join our family of volunteers today.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-solid rev">Volunteer Now 🤝</a>
+      <a href="donat.html"   class="btn-ghost rev">Donate Instead ❤️</a>
+      <a href="adopt.html"   class="btn-ghost rev">Adopt a Pet 🐶</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a><a href="donat.html">Donate</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Volunteer</h4>
+      <a href="contact.html">Walk Dogs</a>
+      <a href="contact.html">Event Support</a>
+      <a href="contact.html">Foster Care</a>
+      <a href="contact.html">Rescue Transport</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
+</footer>
+
+<script>
+  /* Navbar */
+  const toggle=document.getElementById('menu-toggle'),navLinks=document.getElementById('nav-links'),navbar=document.getElementById('navbar');
+  toggle.addEventListener('click',()=>{
+    navLinks.classList.toggle('active');
+    const spans=toggle.querySelectorAll('span'),open=navLinks.classList.contains('active');
+    spans[0].style.transform=open?'rotate(45deg) translate(5px,5px)':'';
+    spans[1].style.opacity=open?'0':'';
+    spans[2].style.transform=open?'rotate(-45deg) translate(5px,-5px)':'';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }));
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>50));
+
+  /* Scroll Reveal */
+  const allR=document.querySelectorAll('.rev,.rev-l,.rev-r,.rev-s');
+  const ro=new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*85);ro.unobserve(e.target);}});
+  },{threshold:0.1});
+  allR.forEach(el=>ro.observe(el));
+
+  /* Counter */
+  function countUp(el,end){
+    let n=0;const step=end/55;
+    const t=setInterval(()=>{n+=step;if(n>=end){el.textContent=end+'+';clearInterval(t);}else el.textContent=Math.floor(n)+'+';},28);
+  }
+  const co=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){countUp(e.target,parseInt(e.target.dataset.count));co.unobserve(e.target);}});
+  },{threshold:.3});
+  document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+</script>
 </body>
 </html>

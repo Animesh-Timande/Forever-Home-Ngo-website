@@ -1,31 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paws & Hearts Rescue - Adoption</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .navbar {
-            background-color: #28a745 !important;
-            transition: background-color 0.3s ease;
-        }
-        .navbar:hover {
-            background-color: #218838 !important;
-        }
-        .section {
-            padding: 80px 0;
-        }
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adoption Process | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ════════════ NAVBAR ════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
+</nav>
+
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🐾 &nbsp; Adoption Guide</div>
+    <h1>Give Love.<br>Get a <em>Forever</em> Friend.</h1>
+    <p class="sub">Adopting a pet is one of the most meaningful things you can do. Here's everything you need to know to bring a rescued soul into your home and heart.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">🩺 All Pets Health-Checked</span>
+      <span class="hero-pill">🤝 Post-Adoption Support</span>
+      <span class="hero-pill">💚 Save Two Lives at Once</span>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Begin</span><div class="scroll-line"></div></div>
+</section>
+
+
+<!-- ════════════ EMOTION STRIP ════════════ -->
+<div class="emotion-strip reveal">
+  <span class="es-icon">🐶</span>
+  <p>"These animals have survived hunger, injury, and loneliness. All they're waiting for now is someone like you — someone who will choose them and never let them go."</p>
+  <span class="es-icon">🐱</span>
+</div>
+
+
+<!-- ════════════ WHAT IS ADOPTION ════════════ -->
+<section class="sec" style="background:var(--warm-white);">
+  <div class="intro-grid">
+
+    <div class="intro-visual reveal-left">
+      <div class="intro-img-frame">
+        <img src="Photo/puppy.jfif" alt="Rescued puppy" onerror="this.style.display='none'">
+        <div class="intro-placeholder">🐕</div>
+      </div>
+      <div class="intro-float">
+        <strong>500+</strong>
+        <span>Lives Saved</span>
+      </div>
+      <div class="intro-dot"></div>
+    </div>
+
+    <div class="intro-text reveal-right">
+      <div>
+        <span class="sec-label">What Is Adoption?</span>
+        <h2 class="sec-title">More Than a Pet —<br>A <em>Lifelong Bond</em></h2>
+      </div>
+      <div class="intro-highlight">
+        "Adopting means choosing a life that was once overlooked — and promising it will never be forgotten again."
+      </div>
+      <p class="sec-body">
+        When you adopt from Forever Home, you're not just taking a pet home. You're giving a rescued animal the security, warmth, and love they were robbed of. Every adoption creates a ripple — one life saved makes space for another to be rescued.
+      </p>
+      <ul class="check-list">
+        <li><span class="ci">✓</span> Every pet is vaccinated, dewormed &amp; vet-cleared before adoption</li>
+        <li><span class="ci">✓</span> Our team provides full guidance and post-adoption support</li>
+        <li><span class="ci">✓</span> We match pets carefully with the right family for the right life</li>
+        <li><span class="ci">✓</span> No hidden fees — adoption is affordable and transparent</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ STEP-BY-STEP ════════════ -->
+<section class="sec sec-center process-sec">
+  <span class="sec-label reveal">How It Works</span>
+  <h2 class="sec-title reveal">The Adoption <em>Journey</em></h2>
+  <p class="sec-body reveal">Four simple, loving steps stand between you and your new best friend.</p>
+
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-num">1</div>
+      <h4>Browse Profiles</h4>
+      <p>Explore our available animals online or visit our shelter to meet them in person. Let your heart guide you.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">2</div>
+      <h4>Express Interest</h4>
+      <p>Fill out our simple adoption inquiry form or contact us directly. We'll respond within 24 hours with warmth.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">3</div>
+      <h4>Meet &amp; Bond</h4>
+      <p>Come to our shelter for a meet-and-greet session. Spend time with your chosen companion and feel the connection.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">4</div>
+      <h4>Take Them Home</h4>
+      <p>Complete the adoption paperwork, pay the nominal fee, and welcome your new family member home forever.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ ELIGIBILITY ════════════ -->
+<section class="sec eligibility-sec">
+  <div class="sec-center" style="margin-bottom:0;">
+    <span class="sec-label reveal">Who Can Adopt</span>
+    <h2 class="sec-title reveal">Adoption <em>Eligibility</em></h2>
+    <p class="sec-body reveal" style="max-width:520px;margin:0 auto;">We want every adoption to be a permanent, happy one. Here's what we look for in a forever family.</p>
+  </div>
+  <div class="elig-grid">
+    <div class="elig-card yes-card reveal-left">
+      <span class="ec-icon">✅</span>
+      <h3>You're a Great Match If…</h3>
+      <ul class="elig-list">
+        <li><span class="elig-bullet">✓</span> You have a stable, pet-friendly living space</li>
+        <li><span class="elig-bullet">✓</span> You're committed to long-term care and companionship</li>
+        <li><span class="elig-bullet">✓</span> You can provide regular food, vet visits, and attention</li>
+        <li><span class="elig-bullet">✓</span> All family members agree and are excited to adopt</li>
+        <li><span class="elig-bullet">✓</span> You have time, patience, and genuine love to give</li>
+      </ul>
+      <span class="ec-deco">🐾</span>
+    </div>
+    <div class="elig-card no-card reveal-right">
+      <span class="ec-icon">⚠️</span>
+      <h3>Please Reconsider If…</h3>
+      <ul class="elig-list">
+        <li><span class="elig-bullet">✗</span> Your landlord or housing society prohibits pets</li>
+        <li><span class="elig-bullet">✗</span> You're adopting impulsively or as a gift for others</li>
+        <li><span class="elig-bullet">✗</span> You cannot commit to the pet's full lifespan</li>
+        <li><span class="elig-bullet">✗</span> There are strong allergies in the household</li>
+        <li><span class="elig-bullet">✗</span> You travel constantly with no one to care for them</li>
+      </ul>
+      <span class="ec-deco">🏠</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ REQUIREMENTS ════════════ -->
+<section class="sec sec-center req-sec">
+  <span class="sec-label reveal">What to Prepare</span>
+  <h2 class="sec-title reveal">What You'll <em>Need</em> to Bring</h2>
+  <p class="sec-body reveal" style="max-width:500px;margin:0 auto;">A few simple things help us ensure every adoption is responsible, safe, and full of love.</p>
+  <div class="req-grid">
+    <div class="req-card reveal">
+      <span class="req-icon">🪪</span>
+      <h4>Valid ID Proof</h4>
+      <p>Any government-issued photo ID (Aadhaar, PAN, Passport) to verify your identity and address.</p>
+    </div>
+    <div class="req-card reveal">
+      <span class="req-icon">🏠</span>
+      <h4>Residence Proof</h4>
+      <p>A document showing your current address — electricity bill, rental agreement, or bank statement.</p>
+    </div>
+    <div class="req-card reveal">
+      <span class="req-icon">📝</span>
+      <h4>Adoption Form</h4>
+      <p>A short form about your lifestyle and home environment to help us find your perfect match.</p>
+    </div>
+    <div class="req-card reveal">
+      <span class="req-icon">📸</span>
+      <h4>Home Photos</h4>
+      <p>Optional but helpful — a few photos of your living space so we can ensure it's safe for your new pet.</p>
+    </div>
+    <div class="req-card reveal">
+      <span class="req-icon">💳</span>
+      <h4>Adoption Fee</h4>
+      <p>A small, nominal fee that covers vaccinations, deworming, and initial medical care for your pet.</p>
+    </div>
+    <div class="req-card reveal">
+      <span class="req-icon">❤️</span>
+      <h4>Love &amp; Commitment</h4>
+      <p>The most important requirement — an open heart, patient hands, and a promise to never give up on them.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ IMPACT NUMBERS ════════════ -->
+<section class="numbers-band">
+  <div class="numbers-inner">
+    <h2 class="reveal">Our Adoption Impact 🐾</h2>
+    <div class="numbers-grid">
+      <div class="num-card reveal">
+        <span class="ni">🐶</span>
+        <h3 data-count="500">0+</h3>
+        <p>Pets Rescued</p>
+      </div>
+      <div class="num-card reveal">
+        <span class="ni">🏠</span>
+        <h3 data-count="20">0+</h3>
+        <p>Successful Adoptions</p>
+      </div>
+      <div class="num-card reveal">
+        <span class="ni">💊</span>
+        <h3 data-count="300">0+</h3>
+        <p>Medical Treatments</p>
+      </div>
+      <div class="num-card reveal">
+        <span class="ni">👥</span>
+        <h3 data-count="15">0+</h3>
+        <p>Volunteers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ TESTIMONIALS ════════════ -->
+<section class="sec testi-sec sec-center">
+  <span class="sec-label reveal">From Our Families</span>
+  <h2 class="sec-title reveal">Stories of <em>Forever Love</em> 💬</h2>
+  <p class="sec-body reveal">Real families. Real joy. Real forever homes.</p>
+  <div class="testi-grid">
+
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"The day we adopted Rocky, our home changed forever. He filled every corner with joy we didn't know we were missing. The Forever Home team made every step feel personal and warm."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👩</div>
+        <div>
+          <strong>Sangeeta &amp; Vivek</strong>
+          <span>Wardha, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"We adopted Misty two years ago and she has completely healed our family. We didn't save her — she saved us. Adopting from Forever Home was the best decision of our lives."</blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">👨</div>
+        <div>
+          <strong>Priya &amp; Rahul</strong>
+          <span>Nagpur, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════ FAQ ════════════ -->
+<section class="sec faq-sec sec-center">
+  <span class="sec-label reveal">Got Questions?</span>
+  <h2 class="sec-title reveal">Adoption <em>FAQs</em></h2>
+  <p class="sec-body reveal" style="max-width:480px;margin:0 auto;">Everything you've been wondering about — answered with love.</p>
+
+  <div class="faq-inner">
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFAQ(this)">
+        How long does the adoption process take?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Once you submit your interest, we typically process adoptions within 3–5 working days. This includes a home assessment, document verification, and a meet-and-greet session with your chosen animal.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFAQ(this)">
+        Is there an adoption fee? What does it cover?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Yes, a nominal adoption fee is charged. This covers the cost of vaccinations, deworming, spay/neuter procedures, and initial veterinary health checks that have already been done for your new companion.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFAQ(this)">
+        Can I adopt if I live in an apartment?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Absolutely! Many of our animals are well-suited to apartment living. We'll help you find the right match based on the animal's temperament, size, and energy level to ensure a perfect fit for your home.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFAQ(this)">
+        What support do I get after adoption?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">Our care doesn't end at adoption. We offer ongoing support including vet referrals, behavioral guidance, diet advice, and a supportive community of pet parents you can reach out to whenever you need.</div>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFAQ(this)">
+        What if I need to return the pet for any reason?
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-a">We understand that sometimes life changes unexpectedly. If you ever can no longer care for your adopted pet, we ask that you return them to us — never abandon them. We will always take them back and find them a new safe home.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ CTA BAND ════════════ -->
+<section class="cta-band">
+  <span class="paw-float" style="top:15%;left:6%;font-size:32px;">🐾</span>
+  <span class="paw-float" style="bottom:20%;right:8%;font-size:20px;animation-delay:3s;">🐾</span>
+  <div class="cta-inner">
+    <h2 class="reveal">Ready to <em>Change a Life?</em> 🐾</h2>
+    <p class="reveal">Somewhere in our shelter, a dog is wagging its tail hoping today is the day. A cat is curled up dreaming of a warm home. That home could be yours.</p>
+    <div class="cta-buttons">
+      <a href="adopt.html"   class="btn-solid reveal">Meet Our Pets 🐶</a>
+      <a href="contact.html" class="btn-ghost reveal">Start Adoption Process</a>
+      <a href="donat.html"   class="btn-ghost reveal">Donate Instead ❤️</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <br>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
+    </div>
+    <div class="f-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a>
+      <a href="donat.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Get Involved</h4>
+      <a href="support.html">Support Us</a>
+      <a href="story.html">Rescue Stories</a>
+      <a href="contact.html">Volunteer</a>
+      <a href="contact.html">Foster a Pet</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
+</footer>
+
+
+<!-- ════════════ SCRIPTS ════════════ -->
+<script>
+  /* ── Navbar ── */
+  const toggle   = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navbar   = document.getElementById('navbar');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const spans = toggle.querySelectorAll('span');
+    const open  = navLinks.classList.contains('active');
+    spans[0].style.transform  = open ? 'rotate(45deg) translate(5px,5px)'   : '';
+    spans[1].style.opacity    = open ? '0' : '';
+    spans[2].style.transform  = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }));
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
+
+  /* ── Scroll Reveal ── */
+  const revealAll = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        ro.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealAll.forEach(el => ro.observe(el));
+
+  /* ── Counter Animation ── */
+  function countUp(el, end) {
+    let n = 0;
+    const step  = end / 55;
+    const timer = setInterval(() => {
+      n += step;
+      if (n >= end) { el.textContent = end + '+'; clearInterval(timer); }
+      else el.textContent = Math.floor(n) + '+';
+    }, 28);
+  }
+  const countEls = document.querySelectorAll('[data-count]');
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target, parseInt(entry.target.getAttribute('data-count')));
+        co.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  countEls.forEach(el => co.observe(el));
+
+  /* ── FAQ Accordion ── */
+  function toggleFAQ(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+
+    // close all
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

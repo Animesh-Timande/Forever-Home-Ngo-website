@@ -1,107 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Home Pet Shelter</title>
-
-    <link rel="icon" href="Photo/logo.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Home Pet Shelter</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-    <div class="logo">
-        <img src="Photo/logo.png" alt="Forever Home Logo">
-        <span>Forever Home</span>
-    </div>
-
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <div class="nav-links" id="nav-links">
-        <a href="#">Home</a>
-        <a href="about.html">About</a>
-        <a href="adopt.html">Adopt</a>
-        <a href="support.html">Support</a>
-        <a href="story.html">Stories</a>
-        <a href="contact.html">Contact</a>
-        <a href="donat.html" class="btn-nav">Donate</a>
-    </div>
+<!-- ════════════════ NAVBAR ════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
 </nav>
-<br>
-<br>
-<br>
-<!-- ================= HERO ================= -->
+
+
+<!-- ════════════════ HERO ════════════════ -->
 <section class="hero">
-    <div class="hero-container">
-<br>
-        <div class="hero-image">
-            <img src="Photo/slider2.png" alt="Rescued Pet">
-        </div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <span class="paw">🐾</span>
+  <span class="paw">🐾</span>
+  <span class="paw">🐾</span>
+  <span class="paw">🐾</span>
 
-        <div class="hero-content">
-            <h1>
-                Every Paw Has a Story  
-                <span>Help Us Give Them a Happy Ending.</span>
-            </h1>
-
-            <p>
-                Thousands of innocent dogs and cats are waiting for love, safety,
-                and a second chance. Your kindness can turn fear into hope.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="donat.html" class="btn primary">🐾 Save a Life</a>
-                <a href="donat.html" class="btn secondary">Become Their Hero</a>
-            </div>
-        </div>
-
+  <div class="hero-inner">
+    <!-- LEFT TEXT -->
+    <div class="hero-text">
+      <div class="hero-tag">🐾 &nbsp; Open Your Heart</div>
+      <h1>
+        Every Paw Has
+        <em class="line2">a Story Worth</em>
+        <span class="line2" style="color:#fff;">Telling.</span>
+      </h1>
+      <p>Thousands of innocent dogs and cats are waiting for love, safety, and a second chance. Your kindness can turn fear into hope — and a scared soul into a joyful one.</p>
+      <div class="hero-btns">
+        <a href="donat.html"  class="btn-solid">🐾 Save a Life</a>
+        <a href="adopt.html"  class="btn-ghost">Adopt a Pet</a>
+      </div>
     </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-img-wrap">
+      <img
+        src="Photo/slider2.png"
+        alt="Rescued Pet"
+        class="hero-img-main"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+      >
+      <div class="hero-img-main" style="display:none;align-items:center;justify-content:center;font-size:120px;">🐕</div>
+
+      <div class="img-badge">
+        <strong>500+</strong>
+        <span>Lives Saved</span>
+      </div>
+      <div class="img-mini">
+        <span class="mi-icon">🏠</span>
+        <div>
+          <strong>20+ Adoptions</strong>
+          <span>Happy Homes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
-<br>
-<br>
-<br>
-<br>
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
 
-    <div class="footer-container">
 
-        <div class="footer-box">
-            <h2>Be Their Miracle Today 🐾</h2>
-            <p>
-                One small donation can feed a hungry pet,
-                provide medical care and give them safety.
-            </p>
-            <a href="donat.html" class="btn primary">Donate Now ❤️</a>
+<!-- ════════════════ STATS STRIP ════════════════ -->
+<div class="stats-strip">
+  <div class="stat-item"><strong data-count="500">0+</strong><span>Pets Rescued</span></div>
+  <div class="stat-div"></div>
+  <div class="stat-item"><strong data-count="20">0+</strong><span>Adoptions</span></div>
+  <div class="stat-div"></div>
+  <div class="stat-item"><strong data-count="300">0+</strong><span>Treatments</span></div>
+  <div class="stat-div"></div>
+  <div class="stat-item"><strong data-count="15">0+</strong><span>Volunteers</span></div>
+</div>
+
+
+<!-- ════════════════ EMOTION STRIP ════════════════ -->
+<div class="emotion-strip reveal">
+  <span class="ei">🐶</span>
+  <p>"They didn't choose to be abandoned. But they still choose to trust. Still choose to wag their tail. Still choose to love — if only someone would choose them back."</p>
+  <span class="ei">🐱</span>
+</div>
+
+
+<!-- ════════════════ WHY US ════════════════ -->
+<section class="why-sec">
+  <div class="sec-hdr sec-center">
+    <span class="sec-label reveal">What We Do</span>
+    <h2 class="sec-title reveal">We Give <em>Second Chances</em> 🐾</h2>
+    <p class="sec-body reveal">Every day, our team works tirelessly to rescue, heal, and rehome animals in need. Because every life deserves a chance to be loved.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="wc-icon">🚑</span>
+      <h4>Emergency Rescue</h4>
+      <p>We respond day and night to injured and abandoned animals — racing to bring them from pain and fear into safety and warmth.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="wc-icon">💊</span>
+      <h4>Medical Rehabilitation</h4>
+      <p>From surgeries and vaccinations to wound care and recovery — our vets restore every animal's health, strength, and dignity.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="wc-icon">🏠</span>
+      <h4>Forever Homes</h4>
+      <p>We carefully match every rescued soul with a loving, responsible family ready to commit to a lifetime of unconditional love.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PETS PREVIEW ════════════════ -->
+<section class="pets-sec">
+  <div class="sec-hdr sec-center">
+    <span class="sec-label reveal">Waiting For You</span>
+    <h2 class="sec-title reveal">Meet <em>Our Pets</em> 🐶🐱</h2>
+    <p class="sec-body reveal">These beautiful souls are healthy, vaccinated, and ready to fill your home with more love than you ever thought possible.</p>
+  </div>
+
+  <div class="pets-grid">
+
+    <div class="pet-card reveal">
+      <div class="pet-img">
+        <img src="Photo/pic dog.jfif" alt="Lucky" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="pet-placeholder" style="display:none;">🐶</div>
+        <span class="pet-status">Available</span>
+        <button class="pet-love-btn">❤️</button>
+      </div>
+      <div class="pet-body">
+        <h4>Lucky 🐶</h4>
+        <div class="pet-tags">
+          <span class="pet-tag">3 Years</span>
+          <span class="pet-tag">Playful</span>
+          <span class="pet-tag">Vaccinated</span>
         </div>
-
-        <div class="footer-box map">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59696.72220513952!2d78.57148569897889!3d20.74896450902372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f04f15aa69d%3A0xe76e35b13382a66c!2sWardha%2C%20Maharashtra!5e0!3m2!1sen!2sin"
-                loading="lazy">
-            </iframe>
-        </div>
-
-        <div class="footer-box">
-            <h3>Quick Links</h3>
-            <a href="#">Home</a>
-            <a href="about.html">About</a>
-            <a href="adopt.html">Adopt</a>
-            <a href="donat.html">Donate</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
+        <a href="contact.html" class="adp-btn">Give Me a Home ❤️</a>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-        © 2026 Forever Home Pet Shelter | Giving Every Paw a Second Chance ❤️
+    <div class="pet-card reveal">
+      <div class="pet-img">
+        <img src="Photo/cat.jfif" alt="Misty" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="pet-placeholder" style="display:none;">🐱</div>
+        <span class="pet-status">Available</span>
+        <button class="pet-love-btn">❤️</button>
+      </div>
+      <div class="pet-body">
+        <h4>Misty 🐱</h4>
+        <div class="pet-tags">
+          <span class="pet-tag">1 Year</span>
+          <span class="pet-tag">Calm</span>
+          <span class="pet-tag">Loving</span>
+        </div>
+        <a href="contact.html" class="adp-btn">Adopt Me 🐾</a>
+      </div>
     </div>
 
+    <div class="pet-card reveal">
+      <div class="pet-img">
+        <img src="Photo/puppy6.jpeg" alt="Max" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="pet-placeholder" style="display:none;">🐶</div>
+        <span class="pet-status">Available</span>
+        <button class="pet-love-btn">❤️</button>
+      </div>
+      <div class="pet-body">
+        <h4>Max 🐶</h4>
+        <div class="pet-tags">
+          <span class="pet-tag">6 Months</span>
+          <span class="pet-tag">Loving</span>
+          <span class="pet-tag">Rescue Baby</span>
+        </div>
+        <a href="contact.html" class="adp-btn">Be My Hero 💖</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pets-cta-row">
+    <a href="adopt.html" class="btn-solid reveal">See All Pets 🐾</a>
+  </div>
+</section>
+
+
+<!-- ════════════════ IMPACT NUMBERS ════════════════ -->
+<section class="impact-sec">
+  <div class="impact-inner">
+    <h2 class="reveal">The Lives We've <em style="font-style:italic;">Changed</em> Together</h2>
+    <div class="impact-grid">
+      <div class="imp-card reveal"><span class="ii">🐶</span><h3 data-count="500">0+</h3><p>Pets Rescued</p></div>
+      <div class="imp-card reveal"><span class="ii">🏠</span><h3 data-count="20">0+</h3><p>Adoptions</p></div>
+      <div class="imp-card reveal"><span class="ii">💊</span><h3 data-count="300">0+</h3><p>Treated</p></div>
+      <div class="imp-card reveal"><span class="ii">👥</span><h3 data-count="15">0+</h3><p>Volunteers</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ STORIES PREVIEW ════════════════ -->
+<section class="stories-sec">
+  <div class="sec-hdr sec-center">
+    <span class="sec-label reveal">Stories of Hope</span>
+    <h2 class="sec-title reveal"><em>Real</em> Stories. Real Miracles. 🐾</h2>
+    <p class="sec-body reveal">Behind every rescued animal is a story of survival, courage, and the kindness of strangers who chose to care.</p>
+  </div>
+  <div class="stories-grid">
+
+    <div class="story-card reveal">
+      <div class="story-img">
+        <img src="Photo/puppy.jfif" alt="Bruno" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="st-placeholder">🐕</div>
+      </div>
+      <div class="story-body">
+        <span class="st-tag">✨ Rescued</span>
+        <h4>Bruno – The Street Survivor</h4>
+        <p>Found starving near a busy road, Bruno was too weak to stand. Today he runs, plays, and sleeps in a warm home — loved beyond words.</p>
+      </div>
+    </div>
+
+    <div class="story-card reveal">
+      <div class="story-img">
+        <img src="Photo/cat.jfif" alt="Misty" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="st-placeholder">🐱</div>
+      </div>
+      <div class="story-body">
+        <span class="st-tag">💚 Adopted</span>
+        <h4>Misty – The Abandoned Kitten</h4>
+        <p>Rescued from heavy rain, malnourished and shivering. After weeks of care and love, Misty found her forever family and never looked back.</p>
+      </div>
+    </div>
+
+    <div class="story-card reveal">
+      <div class="story-img">
+        <img src="Photo/dog1year.jfif" alt="Rocky" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="st-placeholder">🐶</div>
+      </div>
+      <div class="story-body">
+        <span class="st-tag">🏠 Home Found</span>
+        <h4>Rocky – The Forgotten Guard Dog</h4>
+        <p>Abandoned without food and suffering from infections. With treatment, shelter, and daily love — Rocky became the happiest dog we'd ever seen.</p>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;">
+    <a href="story.html" class="btn-solid reveal">Read All Stories 📖</a>
+  </div>
+</section>
+
+
+<!-- ════════════════ DONATE CTA ════════════════ -->
+<section class="donate-band">
+  <span class="paw" style="top:10%;left:4%;font-size:34px;">🐾</span>
+  <span class="paw" style="bottom:15%;right:5%;font-size:20px;animation-delay:3s;">🐾</span>
+  <span class="paw" style="top:50%;right:2%;font-size:14px;animation-delay:6s;">🐾</span>
+
+  <div class="donate-inner">
+    <h2 class="reveal">
+      Be Their <em>Miracle</em><br>Today 🐾
+    </h2>
+    <p class="reveal">
+      Right now, a dog is sleeping on a cold street. A kitten is crying in the rain. 
+      A puppy is too weak to walk. They are not asking for much — just someone to care.
+    </p>
+    <p class="sub-quote reveal">"One small act of kindness can rewrite an entire life."</p>
+
+    <div class="donate-mini reveal">
+      <div class="dm-item">
+        <span class="dmi">🍖</span>
+        <p>₹100 feeds<br><strong style="color:#fff;">3 street dogs</strong></p>
+      </div>
+      <div class="dm-item">
+        <span class="dmi">🏥</span>
+        <p>₹500 gives<br><strong style="color:#fff;">medical treatment</strong></p>
+      </div>
+      <div class="dm-item">
+        <span class="dmi">🚑</span>
+        <p>₹1000 funds<br><strong style="color:#fff;">emergency rescue</strong></p>
+      </div>
+      <div class="dm-item">
+        <span class="dmi">🏠</span>
+        <p>₹5000 builds<br><strong style="color:#fff;">a month of shelter</strong></p>
+      </div>
+    </div>
+
+    <div class="donate-btns">
+      <a href="donat.html"  class="btn-solid reveal">Donate Now ❤️</a>
+      <a href="support.html" class="btn-ghost reveal">Other Ways to Help</a>
+      <a href="adopt.html"  class="btn-ghost reveal">Adopt a Pet 🐶</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ HOW TO HELP ════════════════ -->
+<section class="help-sec">
+  <div class="sec-hdr sec-center">
+    <span class="sec-label reveal">Get Involved</span>
+    <h2 class="sec-title reveal">How <em>You Can Help</em> Change a Life</h2>
+    <p class="sec-body reveal">There are many ways to make a difference. Every act of kindness, no matter how small, means the world to them.</p>
+  </div>
+  <div class="help-grid">
+    <a href="adopt.html" class="help-card reveal">
+      <span class="hc-icon">🐶</span>
+      <h5>Adopt</h5>
+      <p>Give a rescued pet a loving home and a family they can call their own — forever.</p>
+    </a>
+    <a href="donat.html" class="help-card reveal">
+      <span class="hc-icon">🏠</span>
+      <h5>Foster</h5>
+      <p>Open your home temporarily and give a pet warmth and care while they wait for adoption.</p>
+    </a>
+    <a href="donat.html" class="help-card reveal">
+      <span class="hc-icon">💖</span>
+      <h5>Donate</h5>
+      <p>Your support directly provides food, shelter, medical care, and hope for rescued animals.</p>
+    </a>
+    <a href="about.html" class="help-card reveal">
+      <span class="hc-icon">🤝</span>
+      <h5>Volunteer</h5>
+      <p>Share your time and compassion. Feed them, walk them, and show them love they deserve.</p>
+    </a>
+  </div>
+</section>
+
+
+<!-- ════════════════ TESTIMONIAL ════════════════ -->
+<section class="testi-sec">
+  <span class="sec-label reveal">What Families Say</span>
+  <h2 class="sec-title reveal">They Found Love <em>Here</em> 💬</h2>
+  <div class="testi-card reveal">
+    <div class="testi-stars">★★★★★</div>
+    <blockquote>"Adopting from Forever Home didn't just give Rocky a home — it gave our entire family a new meaning. He came broken, and he healed us right back. We will never stop being grateful."</blockquote>
+    <div class="testi-author">
+      <div class="testi-avatar">👩</div>
+      <div>
+        <strong>Sangeeta &amp; Vivek</strong>
+        <span>Wardha, Maharashtra</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-brand">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span class="dot">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own — one rescue at a time.</p>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 24px;">Donate Now ❤️</a>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="adopt.html">Adopt a Pet</a>
+      <a href="donat.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="f-col">
+      <h4>Get Involved</h4>
+      <a href="support.html">Support Us</a>
+      <a href="story.html">Rescue Stories</a>
+      <a href="contact.html">Volunteer</a>
+      <a href="donat.html">Foster a Pet</a>
+    </div>
+    <div class="f-col footer-map">
+      <h4>Our Location</h4>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59696.72220513952!2d78.57148569897889!3d20.74896450902372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f04f15aa69d%3A0xe76e35b13382a66c!2sWardha%2C%20Maharashtra!5e0!3m2!1sen!2sin"
+        loading="lazy"
+        title="Wardha Location">
+      </iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
 </footer>
 
-<script src="app.js"></script>
+
+<!-- ════════════════ SCRIPTS ════════════════ -->
+<script>
+  /* ── Navbar ── */
+  const toggle   = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navbar   = document.getElementById('navbar');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const spans = toggle.querySelectorAll('span');
+    const open  = navLinks.classList.contains('active');
+    spans[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)'   : '';
+    spans[1].style.opacity   = open ? '0' : '';
+    spans[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    toggle.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
+  }));
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
+
+  /* ── Scroll Reveal ── */
+  const allReveal = document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('v'), i * 85);
+        ro.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  allReveal.forEach(el => ro.observe(el));
+
+  /* ── Counter Animation ── */
+  function countUp(el, end) {
+    let n = 0;
+    const step  = end / 55;
+    const timer = setInterval(() => {
+      n += step;
+      if (n >= end) { el.textContent = end + '+'; clearInterval(timer); }
+      else el.textContent = Math.floor(n) + '+';
+    }, 28);
+  }
+  const countEls = document.querySelectorAll('[data-count]');
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target, parseInt(entry.target.dataset.count));
+        co.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  countEls.forEach(el => co.observe(el));
+
+  /* ── Pet Love Button Toggle ── */
+  document.querySelectorAll('.pet-love-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      btn.textContent = btn.textContent === '❤️' ? '🧡' : '❤️';
+      btn.style.background = btn.textContent === '🧡' ? 'var(--amber)' : '';
+    });
+  });
+</script>
+
 </body>
 </html>

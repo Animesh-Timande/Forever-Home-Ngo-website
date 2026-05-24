@@ -1,151 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Adopt</title>
-    <link rel="icon" href="Photo/logo.png">
-   <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adopt | Forever Home</title>
+  <link rel="icon" href="Photo/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- navbar -->
-    <nav class="navbar">
-    <div class="logo">
-        <img src="Photo/logo.png">
-        <span>Forever Home</span>
-    </div>
 
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <div class="nav-links" id="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="#">Adopt</a>
-        <a href="support.html">Support</a>
-        <a href="story.html">Stories</a>
-        <a href="contact.html">Contact</a>
-        <a href="donat.html" class="btn-nav">Donate</a>
-    </div>
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="Photo/logo.png" alt="Forever Home" onerror="this.style.display='none'">
+    <span>Forever <span class="dot">Home</span></span>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#" class="active">Adopt</a>
+    <a href="support.html">Support</a>
+    <a href="story.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donat.html" class="btn-nav">Donate</a>
+  </div>
 </nav>
-    
-    <section class="adopt-hero text-center text-white">
-    <div class="container">
-        <h1>Find a Friend. Find a Forever. 🐾</h1>
-        <p>
-            Behind every wagging tail and gentle purr is a heart waiting for love.
-            Today, you can be someone’s whole world.
-        </p>
+
+<!-- ══ HERO ══ -->
+<section class="adopt-hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <span class="paw-float">🐾</span>
+  <div class="hero-inner">
+    <div class="hero-badge">🐾 &nbsp; Find Your Forever Friend</div>
+    <h1>Find a <em>Friend.</em><br>Find a Forever.</h1>
+    <p class="lead">Behind every wagging tail and gentle purr is a heart waiting for love. Today, you can become someone's entire world.</p>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <strong id="hc1">0+</strong>
+        <span>Pets Available</span>
+      </div>
+      <div class="h-divider"></div>
+      <div class="h-stat">
+        <strong id="hc2">0+</strong>
+        <span>Happy Adoptions</span>
+      </div>
+      <div class="h-divider"></div>
+      <div class="h-stat">
+        <strong id="hc3">0+</strong>
+        <span>Loving Homes</span>
+      </div>
     </div>
+  </div>
+  <div class="scroll-hint"><span>Meet Them</span><div class="scroll-line"></div></div>
 </section>
-<!-- PET LIST SECTION -->
-<section class="pet-section">
-    <div class="container">
-        <div class="row g-4">
 
-            <!-- DOG 1 -->
-            <div class="col-md-4 col-sm-6">
-                <div class="pet-card">
-                    <div class="pet-img">
-                        <img src="Photo/pic dog.jfif" alt="Lucky">
-                    </div>
-                    <div class="pet-info">
-                        <h4>Lucky 🐶</h4>
-                        <p>3 Years • Playful • Vaccinated</p>
-                        <a href="contact.html" class="btn adopt-btn">Give Me a Home ❤️</a>
-                    </div>
-                </div>
-            </div>
+<!-- ══ EMOTION STRIP ══ -->
+<div class="emotion-strip">
+  <p>"Every pet in our shelter has survived something difficult. They ask for nothing but a chance to love and be loved in return."</p>
+</div>
 
-            <!-- CAT -->
-            <div class="col-md-4 col-sm-6">
-                <div class="pet-card">
-                    <div class="pet-img">
-                        <img src="Photo/cat.jfif" alt="Luna">
-                    </div>
-                    <div class="pet-info">
-                        <h4>Misty 🐱</h4>
-                        <p>1 Year • Calm • Loving</p>
-                        <a href="contact.html" class="btn adopt-btn">Adopt Me 🐾</a>
-                    </div>
-                </div>
-            </div>
+<!-- ══ FILTER BAR ══ -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterPets('all', this)">All Pets</button>
+  <button class="filter-btn" onclick="filterPets('dog', this)">🐶 Dogs</button>
+  <button class="filter-btn" onclick="filterPets('cat', this)">🐱 Cats</button>
+  <button class="filter-btn" onclick="filterPets('puppy', this)">🐾 Puppies</button>
+</div>
 
-            <!-- DOG 2 -->
-            <div class="col-md-4 col-sm-6">
-                <div class="pet-card">
-                    <div class="pet-img">
-                        <img src="Photo/puppy6.jpeg" alt="Max">
-                    </div>
-                    <div class="pet-info">
-                        <h4>Max 🐶</h4>
-                        <p>6 Months • Loving • Rescue Hero</p>
-                        <a href="contact.html" class="btn adopt-btn">Be My Hero 💖</a>
-                    </div>
-                </div>
-            </div>
+<!-- ══ PET CARDS ══ -->
+<section class="pets-section">
+  <div class="pets-grid">
 
-            <!-- DOG 3 -->
-            <div class="col-md-4 col-sm-6">
-                <div class="pet-card">
-                    <div class="pet-img">
-                        <img src="Photo/dog1year.jfif" alt="Rocky">
-                    </div>
-                    <div class="pet-info">
-                        <h4>Rocky 🐶</h4>
-                        <p>1 Year • Loyal • Healthy</p>
-                        <a href="contact.html" class="btn adopt-btn">Be My Hero 💖</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DOG 4 -->
-            <div class="col-md-4 col-sm-6">
-                <div class="pet-card">
-                    <div class="pet-img">
-                        <img src="Photo/puppy8monthes.jfif" alt="Oreo">
-                    </div>
-                    <div class="pet-info">
-                        <h4>Oreo 🐶</h4>
-                        <p>8 Months • Loyal • Gentle Soul</p>
-                        <a href="contact.html" class="btn adopt-btn">Be My Hero 💖</a>
-                    </div>
-                </div>
-            </div>
-
+    <!-- Lucky -->
+    <div class="pet-card reveal" data-type="dog">
+      <div class="pet-img">
+        <img src="Photo/pic dog.jfif" alt="Lucky" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+        <span class="pet-status available">Available</span>
+      </div>
+      <div class="pet-info">
+        <h4>Lucky 🐶</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">3 Years</span>
+          <span class="pet-tag">Playful</span>
+          <span class="pet-tag">Vaccinated</span>
         </div>
+        <p class="pet-desc">Lucky is a cheerful, energetic boy who loves morning walks, belly rubs, and being your shadow everywhere you go.</p>
+        <a href="contact.html" class="adopt-btn">Give Me a Home ❤️</a>
+      </div>
     </div>
+
+    <!-- Misty -->
+    <div class="pet-card reveal" data-type="cat">
+      <div class="pet-img">
+        <img src="Photo/cat.jfif" alt="Misty" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+        <span class="pet-status available">Available</span>
+      </div>
+      <div class="pet-info">
+        <h4>Misty 🐱</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">1 Year</span>
+          <span class="pet-tag">Calm</span>
+          <span class="pet-tag">Loving</span>
+        </div>
+        <p class="pet-desc">Misty is a gentle soul who loves quiet evenings, warm laps, and soft whiskers pressed against your cheek.</p>
+        <a href="contact.html" class="adopt-btn">Adopt Me 🐾</a>
+      </div>
+    </div>
+
+    <!-- Max -->
+    <div class="pet-card reveal" data-type="puppy">
+      <div class="pet-img">
+        <img src="Photo/puppy6.jpeg" alt="Max" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+        <span class="pet-status available">Available</span>
+      </div>
+      <div class="pet-info">
+        <h4>Max 🐶</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">6 Months</span>
+          <span class="pet-tag">Loving</span>
+          <span class="pet-tag">Rescue Baby</span>
+        </div>
+        <p class="pet-desc">Max is a tiny rescue hero who survived the streets. Now he's ready to spend every day showering you with kisses.</p>
+        <a href="contact.html" class="adopt-btn">Be My Hero 💖</a>
+      </div>
+    </div>
+
+    <!-- Rocky -->
+    <div class="pet-card reveal" data-type="dog">
+      <div class="pet-img">
+        <img src="Photo/dog1year.jfif" alt="Rocky" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+        <span class="pet-status available">Available</span>
+      </div>
+      <div class="pet-info">
+        <h4>Rocky 🐶</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">1 Year</span>
+          <span class="pet-tag">Loyal</span>
+          <span class="pet-tag">Healthy</span>
+        </div>
+        <p class="pet-desc">Rocky is a loyal, brave boy who was abandoned but never lost his trust in people. He'll be your most faithful companion.</p>
+        <a href="contact.html" class="adopt-btn">Be My Hero 💖</a>
+      </div>
+    </div>
+
+    <!-- Oreo -->
+    <div class="pet-card reveal" data-type="puppy">
+      <div class="pet-img">
+        <img src="Photo/puppy8monthes.jfif" alt="Oreo" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+        <span class="pet-status available">Available</span>
+      </div>
+      <div class="pet-info">
+        <h4>Oreo 🐶</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">8 Months</span>
+          <span class="pet-tag">Gentle</span>
+          <span class="pet-tag">Playful</span>
+        </div>
+        <p class="pet-desc">Oreo is a gentle dreamer who loves naps in the sun and waking up to wagging tails and warm hugs every morning.</p>
+        <a href="contact.html" class="adopt-btn">Be My Hero 💖</a>
+      </div>
+    </div>
+
+    <!-- Bella (bonus) -->
+    <div class="pet-card reveal" data-type="dog">
+      <!-- <div class="pet-img" style="background:linear-gradient(135deg,#f7e8d8,#b8d4c6);display:flex;align-items:center;justify-content:center;font-size:80px;">🐕</div> -->
+       <img src="Photo/bella.webp" alt="Bella" onerror="this.parentNode.style.background='linear-gradient(135deg,#f7e8d8,#b8d4c6)';this.style.display='none'">
+       
+      <div class="pet-info">
+        <h4>Bella 🐶</h4>
+        <div class="pet-meta">
+          <span class="pet-tag">3 Years</span>
+          <span class="pet-tag">Friendly</span>
+          <span class="pet-tag">Good with Kids</span>
+        </div>
+        <p class="pet-desc">Bella's heart is as big as her smile. She gets along with everyone and will fill your home with pure, unconditional joy.</p>
+        <a href="contact.html" class="adopt-btn">Adopt Bella ❤️</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-
-<!-- EMOTIONAL IMPACT SECTION -->
-<section class="impact-section text-center text-white">
-    <div class="container">
-        <h2>Adoption Saves Lives 🐾</h2>
-        <p>
-            When you adopt, you don’t just take a pet home —
-            you save a life and create space to rescue another.
-        </p>
-        <a href="donat.html" class="btn impact-btn">Support With Donation ❤️</a>
+<!-- ══ WHY ADOPT ══ -->
+<section class="why-adopt">
+  <div class="why-inner">
+    <span class="sec-label reveal">Make a Difference</span>
+    <h2 class="sec-title reveal" style="color:#fff;">Why <em style="color:var(--amber-lt);">Adopt</em> From Us?</h2>
+    <p class="sec-body reveal">When you adopt, you don't just take a pet home — you save a life, free a space for another rescue, and gain a love unlike any other.</p>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="wc-icon">🩺</span>
+        <h4>Fully Health-Checked</h4>
+        <p>Every pet is vaccinated, dewormed, and medically cleared before adoption.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="wc-icon">🤝</span>
+        <h4>We Support You</h4>
+        <p>Our team stays with you after adoption — guidance, resources, and a caring community.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="wc-icon">💚</span>
+        <h4>Save Two Lives</h4>
+        <p>Adopting one pet creates space for us to rescue another animal from the streets.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer text-center text-white">
-    <div class="container">
-        <h3>Every Paw Deserves Love 🐶🐱</h3>
-        <p>
-            Can’t adopt right now? Your donation helps provide food,
-            shelter, and medical care for pets waiting for their forever home.
-        </p>
-        <a href="donat.html" class="btn footer-donate">Donate Now</a>
-        <hr class="bg-light">
-        <p>© 2026 Forever Home Pet Shelter | Giving Every Paw a Second Chance ❤️</p>
+<!-- ══ ADOPTION PROCESS ══ -->
+<section class="process-section">
+  <div class="process-header">
+    <span class="sec-label reveal">How It Works</span>
+    <h2 class="sec-title reveal">The Adoption <em>Process</em></h2>
+    <p class="sec-body reveal" style="max-width:500px;margin:0 auto;">Simple, transparent, and filled with love — finding your forever friend is just 4 steps away.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="step-num">1</div>
+      <h5>Browse Pets</h5>
+      <p>Explore our available animals and find the one that connects with your heart.</p>
     </div>
+    <div class="process-step reveal">
+      <div class="step-num">2</div>
+      <h5>Contact Us</h5>
+      <p>Reach out through our contact form to express your interest and ask questions.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">3</div>
+      <h5>Meet &amp; Greet</h5>
+      <p>Visit our shelter to meet your chosen companion in person and bond with them.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">4</div>
+      <h5>Take Them Home</h5>
+      <p>Complete the adoption and give them the forever home they've been dreaming of.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EMOTIONAL IMPACT ══ -->
+<section class="impact-band">
+  <h2 class="reveal">Adoption Saves Lives 🐾</h2>
+  <p class="reveal">Every adoption creates a ripple effect of kindness. One animal finds love, another gets a chance. Your choice today changes everything tomorrow.</p>
+  <div class="impact-btns">
+    <a href="donat.html" class="btn-white reveal">Support With Donation ❤️</a>
+    <a href="contact.html" class="btn-outline-white reveal">Adopt Now 🐾</a>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIAL ══ -->
+<section class="testi-section">
+  <div class="testi-inner">
+    <span class="sec-label reveal">From Our Families</span>
+    <h2 class="sec-title reveal">They Found Their <em>Home</em> 💬</h2>
+    <div class="testi-card reveal">
+      <blockquote>"The day we adopted Rocky, we didn't just bring home a dog — we brought home a soul who completed our family. The team at Forever Home made every step feel warm and personal."</blockquote>
+      <cite>— Sangeeta &amp; Vivek, Wardha</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ══ -->
+<section class="cta-band">
+  <h2 class="reveal">Every Paw Deserves Love 🐶🐱</h2>
+  <p class="reveal">Can't adopt right now? Your donation helps provide food, shelter, and medical care for pets waiting for their forever home.</p>
+  <div class="cta-btns">
+    <a href="donat.html" class="btn-solid reveal">Donate Now ❤️</a>
+    <a href="support.html" class="btn-outline-dark reveal">Other Ways to Help</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-logo">
+        <img src="Photo/logo.png" alt="logo" onerror="this.style.display='none'">
+        <span>Forever <span style="color:var(--amber-lt);">Home</span></span>
+      </div>
+      <p>Giving abandoned pets a second chance at life, love, and a family they can call their own.</p>
+      <br>
+      <a href="donat.html" class="btn-solid" style="font-size:13px;padding:10px 22px;">Donate Now ❤️</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="#">Adopt a Pet</a>
+      <a href="donat.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <a href="support.html">Support Us</a>
+      <a href="story.html">Rescue Stories</a>
+      <a href="contact.html">Volunteer</a>
+      <a href="contact.html">Foster a Pet</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Forever Home | Giving Every Paw a Second Chance ❤️</div>
 </footer>
 
-    <script src="app.js"></script>
+<script>
+  /* ── Navbar ── */
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navbar = document.getElementById('navbar');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const spans = toggle.querySelectorAll('span');
+    const open = navLinks.classList.contains('active');
+    spans[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+    spans[1].style.opacity  = open ? '0' : '';
+    spans[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      toggle.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    });
+  });
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
+
+  /* ── Scroll Reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── Counter ── */
+  function countUp(el, end) {
+    let n = 0; const s = end / 50;
+    const t = setInterval(() => {
+      n += s; if (n >= end) { el.textContent = end + '+'; clearInterval(t); }
+      else el.textContent = Math.floor(n) + '+';
+    }, 28);
+  }
+  const heroSec = document.querySelector('.adopt-hero');
+  const heroObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      countUp(document.getElementById('hc1'), 5);
+      setTimeout(() => countUp(document.getElementById('hc2'), 20), 200);
+      setTimeout(() => countUp(document.getElementById('hc3'), 20), 400);
+      heroObs.disconnect();
+    }
+  });
+  heroObs.observe(heroSec);
+
+  /* ── Filter ── */
+  function filterPets(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pet-card').forEach(card => {
+      const match = type === 'all' || card.dataset.type === type;
+      card.style.transition = 'opacity .35s, transform .35s';
+      if (match) {
+        card.style.opacity = '1'; card.style.transform = '';
+        card.style.display = 'block';
+      } else {
+        card.style.opacity = '0'; card.style.transform = 'scale(.95)';
+        setTimeout(() => { if (!match) card.style.display = 'none'; }, 350);
+      }
+    });
+  }
+</script>
 </body>
 </html>
